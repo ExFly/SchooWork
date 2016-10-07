@@ -1,0 +1,136 @@
+html {
+  width: 100%;
+  margin: auto;
+}
+* {
+  box-sizing: border-box;
+}
+ul, li {
+  padding: 0 0;
+  margin: 0 0;
+}
+li {
+  list-style-type: none;
+}
+.clear {
+  clear: both;
+}
+/* @component */
+/* @nav */
+.nav-horizontal *{
+  display: inline-block;
+}
+.nav-vertical {}
+
+
+/*局部特殊style*/
+/*@top*/
+.top {
+  margin: 0 2rem;
+  padding: 0.3rem 0;
+}
+.top .left {
+  float: left;
+}
+.top .right {
+  float: right;
+}
+
+/*@banner*/
+.banner {
+  max-width: 1024px;
+  text-align: center;
+}
+.banner form {
+  display: inline-block;
+}
+.banner {
+  background-image: url("./static/images/headerBackground.png");
+  background-repeat:repeat-x;
+}
+
+/*@nav*/
+.nav {
+  text-align: center;
+}
+.nav ul {
+  margin: 1rem 0;
+  padding: 0 0;
+}
+/*@jumu*/
+.jumu *{
+  display: inline-block;
+}
+.jumu ul {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+/*@container*/
+.container {
+  margin: 0 auto;
+  width:90%;
+  min-width: 50rem;
+}
+
+/*@news*/
+.news-title {
+  display: inline-block;
+}
+.news-left{
+  display: inline-block;
+  width: 30%;
+  position: relative;
+  top:0;
+}
+.news-left p {
+  word-wrap:break-word;//折行
+}
+.news-right{
+  display: inline-block;
+  width: 69%;
+}
+.news-right li {
+  display: inline-block;
+  width: 49%;
+}
+.news-right img{
+  display: inline-block;
+  width: 30%;
+}
+.news-right .news-con {
+  display: inline-block;
+  width: 68%;
+}
+.img {
+  width: 100%;
+}
+
+.news .col-3 {
+  display: inline-block;
+  width: 30%;
+}
+.news .left .right {
+  display: inline-block;
+}
+
+
+/*@footer*/
+.footer-nav {
+  width: 90%;
+  margin: 0 auto;
+}
+.footer-nav section{
+  display: inline-block;
+  width: 15%;
+}
+.inline-block li {
+  display: inline-block;
+}
+
+.copyright {
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  vertical-align: middle;
+}
