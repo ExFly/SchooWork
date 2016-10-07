@@ -1,7 +1,6 @@
 ![img](https://avatars1.githubusercontent.com/u/22613193?v=3&s=466)
 ### Author: [ExFly](https://github.com/ExFly)
 
-# 介绍
 整理学校的作业，方便查看
 
 # 按分支整理 如下 list
