@@ -1,0 +1,13 @@
+/* 在bootstrap core基础上创建的 */
+//@import "bootstrap/core";
+
+
+
+// Core variables and mixins
+@import "bootstrap/custom";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+@import "bootstrap/print";
