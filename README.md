@@ -1,7 +1,8 @@
 ![img](https://avatars1.githubusercontent.com/u/22613193?v=3&s=466)
 ### Author: [ExFly](https://github.com/ExFly)
 
-静态网页设计作业
+
+静态网页设计作业[展示地址](https://exfly.github.io/ProjectExhibition/ExsxuHomepage/v1/index.html)
 
 # 网页设计
 
