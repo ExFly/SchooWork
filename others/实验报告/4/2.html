@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>设计表单样式</title>
+    <style type="text/css">
+        body {
+            background-color: #ccc;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .center {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translateX(-50%) translateY(-50%);
+        }
+        .main {
+            width: 20rem;
+            height: 20rem;
+        }
+        input.ys {
+            border:1px solid #f90;
+            background-color: #fc0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main center">
+        <form class="form">
+            <input class="ys" type="text">
+            <input class="ys" type="password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
