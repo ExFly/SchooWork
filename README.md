@@ -2,7 +2,7 @@
 ### Author: [ExFly](https://github.com/ExFly)
 
 
-静态网页设计作业[展示地址](https://exfly.github.io/ProjectExhibition/ExsxuHomepage/v1/index.html)
+静态网页设计作业[展示地址v1](https://exfly.github.io/ProjectExhibition/ExsxuHomepage/v1/index.html)[展示地址v2](https://exfly.github.io/ProjectExhibition/ExsxuHomepage/v2/index.html)
 
 # 网页设计
 
