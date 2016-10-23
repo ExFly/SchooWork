@@ -1,0 +1,86 @@
+@charset: 'utf-8';
+/*
+ * fluid layout
+ * @author ExFly
+ * @email exfly@outlook.com
+ * https://github.com/aekaplan/grid
+ */
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+/*布局元素 */
+/*
+container  全局容器
+row 一行的内容
+column 列
+
+<div class="container"> /*
+  <div class="row">
+    <div class="column full">
+      <p>aaaaaaaaaa</p>
+    </div>
+  </div>
+</div>
+*/
+
+/* 清除浮动*/
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+.row:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+
+.column {
+  position: relative;
+  overflow:hidden;
+}
+  .column>*{
+    word-break: break-word;
+  }
+
+.container {
+  margin: 0 auto;
+}
+
+@media (min-width: 40rem) {
+  .container {
+    max-width: 48rem;
+    width: 90%;
+  }
+  .column {
+    float: left;
+  }
+  .column.full { width: 100%; }
+  .column.two-thirds { width: 66.7%; }
+  .column.half { width: 50%; }
+  .column.third { width: 33.3%; }
+  .column.fourth { width: 25%; }
+  .column.flow-opposite { float: right; }/*向右浮动*/
+}
+
+@media (max-width: 40rem) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 40rem) {
+  .column.flow-opposite { float: right; }
+}
+
+
