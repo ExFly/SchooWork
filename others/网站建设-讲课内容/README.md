@@ -1,10 +1,8 @@
-[TOCM]
-
 [TOC]
 
 * [Web 前端开发模式演变](http://blog.jimmylv.info/2015-11-02-history-about-web-development-evolution/)
-* **[frontend-awesome](https://github.com/ExFly/CsLearning/blob/master/NoteBookForDevelop/%E6%96%87%E6%A1%A3/Web/frontend-awesome.md)**
 * **[结合个人经历总结的前端入门方法](https://github.com/qiu-deqing/FE-learning)**
+* **[frontend-awesome](https://github.com/ExFly/CsLearning/blob/master/NoteBookForDevelop/%E6%96%87%E6%A1%A3/Web/frontend-awesome.md)**
 * [前段gitbook](https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/box-module.html)
 * 前段知识：
   * 切图
@@ -39,9 +37,12 @@
 # 浏览器选择问题
 * [百度数据研究院](http://tongji.baidu.com/data/browser)
 * [2016年7月份全球主流浏览器市场份额排行榜](http://liulanmi.com/top/11144.html)
+* [web相关统计数据](https://w3techs.com/technologies/overview/programming_language/all)
 
 
 # 讲课顺序
+
+## 切图
 
 ## css
 
@@ -57,17 +58,17 @@
    * 媒体查询
    * 页面百分比
 * [rem](https://developer.mozilla.org/zh-CN/docs/Web/CSS/length)
-* jQuery
+* [jQuery](https://w3techs.com/technologies/overview/javascript_library/all)
 * 轮播
 * [响应式布局](https://github.com/aekaplan/grid)
    * [chinese](http://geekplux.com/grid/)
-* scss
 
 
 ## 工具
 
+* scss
 * github
-  * https://github.com
+  * 介绍 https://github.com/twbs/bootstrap
   * https://github.com/ExFly
   * https://github.com/trending
 * 框架
