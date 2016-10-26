@@ -99,3 +99,27 @@
   * [菜单](http://demo.lanrenzhijia.com/2016/nav0527/#0)
   * [星团](http://demo.lanrenzhijia.com/2016/css0429/)
   * [整合](http://www.shejidaren.com/15-css3-effects.html)
+  
+
+# list
+切图
+debug
+normalize.css
+float
+positon
+display
+rem
+轮播
+
+scss
+github
+  介绍 https://github.com/twbs/bootstrap
+  https://github.com/ExFly
+  https://github.com/trending
+
+bootstrap
+
+markdown [Editor.md](https://pandao.github.io/editor.md/) typora
+nodejs
+响应式
+组件化

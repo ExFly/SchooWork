@@ -73,14 +73,12 @@ column 列
   .column.flow-opposite { float: right; }/*向右浮动*/
 }
 
+@media (min-width: 40rem) {
+  .column.flow-opposite { float: right; }
+}
+
 @media (max-width: 40rem) {
   .container {
     width: 100%;
   }
 }
-
-@media (min-width: 40rem) {
-  .column.flow-opposite { float: right; }
-}
-
-
