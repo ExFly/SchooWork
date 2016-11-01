@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+                    {% if option['is_signed'] %}
+                        <a href="/logout">logout</a>
+                    {% else %}
+                        <a href="/login">login</a>
+                    {% end %}
+
+            <h1>{{ option['title'] }}</h1>
+            <p>Hello {{ option['username'] or "World" }}</p>
+</body>
+</html>
