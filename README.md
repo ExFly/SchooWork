@@ -4,8 +4,10 @@
 整理学校的作业，方便查看
 
 # 按分支整理 如下 list
+
 * [静态网页设计](https://github.com/ExFly/SchooWork/tree/web-design-static):[展示地址](https://exfly.github.io/ProjectExhibition/ExsxuHomepage/v2/index.html)
-* [图书管理系统]()
+* [图书管理系统](/)
+
 # 资源
 * [开发笔记](https://github.com/ExFly/NoteBookForDevelop)
 
