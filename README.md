@@ -22,12 +22,14 @@ python modules/creatdb.py
 
 # 测试
 
-```
+# 备注
+* 分成5个等级，0普通读者，1普通管理员，5最高权限管理员，234保留
 
 # 资源
 
+* [tornado doc](http://www.tornadoweb.cn/documentation#_5)
 * [SQLAlchemy文档-zh](http://www.codexiu.cn/python/SQLAlchemy%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/529/)
 * [SQLAlchemy-Documentation](http://docs.sqlalchemy.org/)
-
+* [图书管理系统 需求分析](https://www.processon.com/tag/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F)
 # log
 * 11.01 创建项目，并添加简单登陆功能，接下来设计操作流程，创建数据库表，不断的加入功能。

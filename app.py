@@ -11,8 +11,9 @@ import tornado.httpserver
 import tornado.ioloop
 
 import config
-from handler.auth.LoginHandler import LoginHandler, LogoutHandler
+from handler.auth.LoginHandler import LoginHandler, LogoutHandler, SignUpHandler
 from handler.IndexHandler import IndexHandler
+from handler.Book import AllBookInfoHandler, BookAdderHandler, BookEditerHandler,DelHandlerHandler
 
 
 class Application(tornado.web.Application):
@@ -21,6 +22,11 @@ class Application(tornado.web.Application):
             (r"/", IndexHandler),
             (r'/login', LoginHandler),
             (r'/logout', LogoutHandler),
+            (r'/allbookinfo', AllBookInfoHandler),
+            (r'/editbook/add', BookAdderHandler),
+            (r'/editbook/edit/(.+)', BookEditerHandler),
+            (r"/editbook/del", DelHandlerHandler),
+            (r'/signup', SignUpHandler),
         ]
         settings = {
             "static_path": os.path.join(os.path.dirname(__file__), "static"),
@@ -31,6 +37,7 @@ class Application(tornado.web.Application):
             "debug": config.DEBUG,
         }
         tornado.web.Application.__init__(self, handlers, **settings)
+
 
 def main():
     http_server = tornado.httpserver.HTTPServer(Application())

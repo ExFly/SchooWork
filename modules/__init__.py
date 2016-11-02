@@ -1,17 +1,16 @@
 import modules
 import modules.base
-from modules.auth import Auth, Group
-from modules.base import Engine
 from sqlalchemy.orm import sessionmaker
 
+from modules.auth import Auth
+from modules.book import Book
+from modules.base import Engine
+
+
 def init_db():
-    modules.base.BaseModel.metadata.create_all(modules.base.Engine)
+    modules.base.BaseModel.metadata.create_all(Engine)
 
 def drop_db():
-    modules.base.BaseModel.metadata.drop_all(modules.base.Engine)
+    modules.base.BaseModel.metadata.drop_all(Engine)
 
-Session = sessionmaker(bind=modules.base.Engine)
-
-
-if __name__ == '__main__':
-    pass
+Session = sessionmaker(bind=Engine)

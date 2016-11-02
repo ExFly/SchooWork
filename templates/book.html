@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>书籍信息</title>
+</head>
+<body>
+
+<table>
+    <tr>
+      <td>id</td>
+      <td>name</td>
+      <td>num</td>
+      <td>category</td>
+      <td>publishing</td>
+      <td>pubdata</td>
+      <td>price</td>
+      <td>picture</td>
+    </tr>
+    {% for book in opmaper['book'] %}
+        <tr>
+            <td>
+                {{ book.id }}
+            </td>
+            <td>
+                {{ book.name }}
+            </td>
+            <td>
+                {{ book.num }}
+            </td>
+            <td>
+                {{ book.category }}
+            </td>
+            <td>
+                {{ book.publishing }}
+            </td>
+            <td>
+                {{ book.pubdata }}
+            </td>
+            <td>
+                {{ book.price }}
+            </td>
+            <td>
+                {{ book.picture }}
+            </td>
+        </tr>
+    {% end %}
+</table>
+
+</body>
+</html>
