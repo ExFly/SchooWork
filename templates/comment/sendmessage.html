@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>发送留言</title>
+</head>
+<body>
+<form action="/message" method="post">
+  <fieldset>
+    <legend>留言:</legend>
+      {% raw xsrf_form_html() %}
+      <textarea rows="10" cols="30" name="message"></textarea><br>
+      <input type="submit">
+  </fieldset>
+</form>
+</body>
+</html>

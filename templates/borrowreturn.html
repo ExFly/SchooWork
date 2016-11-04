@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>借还书</title>
+</head>
+<body>
+<form action="/borrow" method="post">
+    {% raw xsrf_form_html() %}
+    bookid<input type="text" name="bookid"><br>
+    tp<input type="text" name="tp"><br>
+    <input type="submit">
+</form>
+</body>
+</html>

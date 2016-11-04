@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>看消息</title>
+</head>
+<body>
+<table>
+    <tr>
+      <td>uuid</td>
+      <td>messages</td>
+      <td>time</td>
+    </tr>
+    {% for messages in opt['messages'] %}
+        <tr>
+            <td>
+                {{ messages.uuid }}
+            </td>
+            <td>
+                {{ messages.message }}
+            </td>
+            <td>
+                {{ messages.date }}
+            </td>
+        </tr>
+    {% end %}
+</table>
+</body>
+</html>

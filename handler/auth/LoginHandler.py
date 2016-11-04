@@ -46,8 +46,10 @@ class SignUpHandler(BaseHandler):
 
     def get(self):
         msg = ''
-        self.render("signup.html", msg=msg)
-        self.render("signup.html")
+        if self.get_current_user():
+            self.redirect("/")
+        else:
+            self.render("signup.html", msg=msg)
 
     def post(self):
         session = Session()

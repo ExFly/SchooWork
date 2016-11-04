@@ -12,9 +12,11 @@ import tornado.ioloop
 
 import config
 from handler.auth.LoginHandler import LoginHandler, LogoutHandler, SignUpHandler
+from handler.auth.DelHandler import AuthDelHandler
 from handler.IndexHandler import IndexHandler
 from handler.Book import AllBookInfoHandler, BookAdderHandler, BookEditerHandler,DelHandlerHandler
-
+from handler.BorrowReturnHandler import BorrowReturnHandler
+from handler.message.SendMessageHandler import SendMessageHandler, SeeMessageHandler
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -27,6 +29,10 @@ class Application(tornado.web.Application):
             (r'/editbook/edit/(.+)', BookEditerHandler),
             (r"/editbook/del", DelHandlerHandler),
             (r'/signup', SignUpHandler),
+            (r'/authinfo', AuthDelHandler),
+            (r'/borrow', BorrowReturnHandler),
+            (r'/message', SendMessageHandler),
+            (r'/seemessage', SeeMessageHandler),
         ]
         settings = {
             "static_path": os.path.join(os.path.dirname(__file__), "static"),
