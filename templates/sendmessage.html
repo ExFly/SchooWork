@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% block title %}
+  {{ option['title'] }}
+{% end %}
+{% block comtainer %}
+  <div class="container">
+    <form action="/message" method="post">
+      {% raw xsrf_form_html() %}
+      <div class="form-group">
+          <label for="exampleTextarea">留言：</label>
+          <textarea name='message' class="form-control" id="exampleTextarea" rows="3"></textarea>
+      </div>
+      <input type="submit" name="" class="btn btn-outline-primary" >
+    </form>
+  </div>
+{% end %}

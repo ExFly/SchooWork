@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+                    {% if option['is_signed'] %}
+                        <a href="/logout">logout</a>
+                    {% else %}
+                        <a href="/login">login</a>
+                    {% end %}
+
+            <h1>{{ option['title'] }}</h1>
+            <p>Hello {{ option['username'] or "World" }}</p>
+
+<div>
+    <p>功能</p>
+    <ul>
+        <li><a href="/allbookinfo">all book info</a></li>
+        <li><a href="/editbook/add">add book</a></li>
+        <li><a href="/editbook/edit/1">edit book</a></li>
+        <li><a href="/editbook/del">del book</a></li>
+        <li><a href="/signup">SignUp</a></li>
+        <li><a href="/borrow">the books had borrow</a></li>
+    </ul>
+</div>
+</body>
+</html>

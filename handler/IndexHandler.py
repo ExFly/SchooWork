@@ -7,16 +7,11 @@ import tornado
 class IndexHandler(BaseHandler):
     # @tornado.web.authenticated
     def get(self):
-        #user = tornado.escape.xhtml_escape(self.current_user)
-        username = self.get_cookie('username')
-        if username:
-            is_signed = True
+        option = self.get_option('图书管理系统|Index')
+        power = self.get_cookie('power')
+        if power:
+            option['power'] = int(power) > 1
         else:
-            is_signed = False
-
-        option = {
-            'username':username,
-            'is_signed':is_signed,
-            'title': 'Main Test Page',
-        }
+            option['power'] = False
+        #user = tornado.escape.xhtml_escape(self.current_user)
         self.render("index.html", option=option)

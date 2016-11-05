@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% block title %}
+	{{ option['title'] }}
+{% end %}
+{% block comtainer %}
+  <div class="container">
+  	<form class="form-inline">
+        <input class="form-control" type="text" placeholder="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <!-- book info table -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Name</td>
+          <td>Num</td>
+          <td>Category</td>
+          <td>Publishing</td>
+          <td>Pubdate</td>
+          <td>Price</td>
+          <td>Picture</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in option['book'] %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.name }}</td>
+                <td>{{ book.num }}</td>
+                <td>{{ book.category }}</td>
+                <td>{{ book.publishing }}</td>
+                <td>{{ book.pubdate }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.picture }}</td>
+            </tr>
+        {% end %}
+
+      </tbody>
+    </table>
+  </div>
+{% end %}

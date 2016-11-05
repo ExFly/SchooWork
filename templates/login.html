@@ -1,43 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>SignIn Page</title>
-    <style>
-        .login {
-            position: absolute;
-            top:20%;
-            left:30%;
-            width: 30rem;
-            height: 30rem;
-            margin: 0 auto;
-        }
-    </style>
-</head>
-<body>
-<main class="main">
+{% extends 'base/base.html' %}
+{% block title %}
+	{{ option['title'] }}
+{% end %}
+{% block style %}
+@media (min-width: 768px) {
+  .wi {
+    position: absolute;
+    width: 28rem;
+    top:30%;
+    left: 30%;
+  }
+}
+{% end %}
+{% block comtainer %}
+  <div class="container wi">
+      <form class="f" action="/{{ option['tp'] }}" method="post">
+        {% raw xsrf_form_html() %}
+        <!-- username -->
+        <div class="form-group row">
+          <label for="username" class="col-sm-2 col-form-label">username</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="username" name="username">
+          </div>
+        </div>
 
-<form class="login pure-form pure-form-aligned" action="/login" method="post">
-  <fieldset>
-    {% raw xsrf_form_html() %}
-    <div class="pure-control-group">
-        <label for="">SignIn</label>
-    </div>
-    <div class="pure-control-group">
-      <label for="name">Username:</label>
-      <input id="name" name="username" type="text" placeholder="Username">
-    </div>
+        <!-- password -->
+        <div class="form-group row">
+          <label for="password" class="col-sm-2 col-form-label">password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" name="password">
+          </div>
+        </div>
 
-    <div class="pure-control-group">
-      <label for="password">Password:</label>
-      <input id="password" name="password" type="password" placeholder="Password">
+        <!-- checkbox -->
+        <div class="form-group row">
+          <label class="col-sm-2">Checkbox</label>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Check me out
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-sm-2 col-sm-10">
+            <input value="{{ option['tp'] }}" class="btn btn-primary" type="submit">
+          </div>
+        </div>
+      </form>
     </div>
-
-    <div class="pure-controls">
-      <button type="submit" class="pure-button pure-button-primary">Submit</button>
-    </div>
-  </fieldset>
-</form>
-</main>
-
-</body>
-</html>
+{% end %}

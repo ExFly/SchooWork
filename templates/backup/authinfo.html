@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>所有用户信息</title>
+</head>
+<body>
+<table>
+    <tr>
+      <td>uuid</td>
+      <td>username</td>
+      <td>password</td>
+      <td>power</td>
+    </tr>
+    {% for book in opmaper['auth'] %}
+        <tr>
+            <td>
+                {{ book.uuid }}
+            </td>
+            <td>
+                {{ book.username }}
+            </td>
+            <td>
+                {{ book.password }}
+            </td>
+            <td>
+                {{ book.power }}
+            </td>
+        </tr>
+    {% end %}
+</table>
+</body>
+</html>

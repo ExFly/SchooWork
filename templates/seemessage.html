@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% block title %}
+  {{ option['title'] }}
+{% end %}
+{% block comtainer %}
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>UUID</td>
+          <td>Messages</td>
+          <td>Time</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for messages in option['message'] %}
+          <tr>
+            <td>{{ messages.uuid }}</td>
+            <td>{{ messages.message }}</td>
+            <td>{{ messages.date }}</td>
+          </tr>
+        {% end %}
+
+      </tbody>
+    </table>
+  </div>
+{% end %}

@@ -8,21 +8,23 @@ from modules import *
 class AllBookInfoHandler(BaseHandler):
 
     def get(self):
+        option = self.get_option('书籍信息|Index')
         session = Session()
         all_book = session.query(Book).all()
-        self.render("book.html", opmaper={'book':all_book,})
+        option['book'] = all_book
+        self.render("bookinfo.html", option=option)
 
     def post(self):
-        session = Session()
-        all_book = session.query(Book).all()
-        self.render("book.html", opmaper={'book': all_book,})
+        self.get()
 
 
 class BookAdderHandler(BaseHandler):
 
     @tornado.web.authenticated
     def get(self):
-        self.render('addbook.html')
+        option = self.get_option('增加书籍|Index')
+        option['tp'] = 'add'
+        self.render('addalterbook.html', option=option)
 
     @tornado.web.authenticated
     def post(self):
@@ -54,8 +56,11 @@ class BookEditerHandler(BaseHandler):
 
     @tornado.web.authenticated
     def get(self, bknm):
+        option = self.get_option('修改书籍|Index')
+        option['tp'] = 'edit'
         self.set_cookie('bookid', bknm)
-        self.render('alterbook.html', bknm=bknm)
+        option['bknm'] = bknm
+        self.render('addalterbook.html', option=option)
 
     @tornado.web.authenticated
     def post(self, bknm):
@@ -73,7 +78,7 @@ class BookEditerHandler(BaseHandler):
                 num = self.get_argument('num')
                 category = self.get_argument('category')
                 publishing = self.get_argument('publishing')
-                pubdate = self.get_argument('pubdata')
+                pubdate = self.get_argument('pubdate')
                 price = self.get_argument('price')
                 picture = self.get_argument('picture')
 
@@ -95,7 +100,8 @@ class DelHandlerHandler(BaseHandler):
 
     @tornado.web.authenticated
     def get(self):
-        self.render('delbook.html')
+        option = self.get_option('删除书籍|Index')
+        self.render('delbook.html', option=option)
 
     @tornado.web.authenticated
     def post(self):

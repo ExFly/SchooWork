@@ -15,14 +15,18 @@ def init():
     session.add(Auth(uuid=auth_root, username='root', password='toor', power='5'),)
     session.commit()
     session.add_all([
-        Auth(uuid=auth_test, username='test', password='test'),
-        Auth(uuid=uuid.uuid4().hex, username='阿dee', password='toor'),
+        Auth(uuid=auth_test, username='test', password='test', power='2'),
+        Auth(uuid=uuid.uuid4().hex, username='aaaaa', password='aaaaa'),
+        Auth(uuid=uuid.uuid4().hex, username='bbbbb', password='bbbbb'),
+
         Book(name='book1', num='1', category='c1', pubdate=datetime.date.today()),
         Book(name='book2', num='1', category='c1',
              pubdate=datetime.date.today()),
         Book(name='book3', num='1', category='c1',
              pubdate=datetime.date.today()),
-        Book(name='book4', num='1', category='c1',
+        Book(name='book4', num='1', category='c2',
+             pubdate=datetime.date.today()),
+        Book(name='book5', num='1', category='c2',
              pubdate=datetime.date.today()),
     ])
     session.commit()
@@ -35,6 +39,10 @@ def init():
         Message(uuid=auth_test, message='bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
                 date=datetime.datetime.now()),
         Message(uuid=auth_test, message='ccccccccccccccccccccccccccccccccccccc',
+                date=datetime.datetime.now()),
+        Message(uuid=auth_test, message='ddddddddddddddddddddddddddddddddddddd',
+                date=datetime.datetime.now()),
+        Message(uuid=auth_test, message='eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
                 date=datetime.datetime.now()),
     ])
 

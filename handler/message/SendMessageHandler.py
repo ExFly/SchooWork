@@ -9,7 +9,8 @@ class SendMessageHandler(BaseHandler):
 
     @tornado.web.authenticated
     def get(self):
-        self.render('comment/sendmessage.html')
+        option = self.get_option('留言|Index')
+        self.render('sendmessage.html', option=option)
 
     @tornado.web.authenticated
     def post(self):
@@ -33,6 +34,8 @@ class SeeMessageHandler(BaseHandler):
             print('权限不足')
             self.redirect('/')
         else:
+            option = self.get_option('留言|Index')
             session = Session()
             m = session.query(Message).filter().all()
-            self.render('comment/seemessage.html', opt={'messages': m})
+            option['message'] = m
+            self.render('seemessage.html', option=option)

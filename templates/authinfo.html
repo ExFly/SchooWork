@@ -1,33 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>所有用户信息</title>
-</head>
-<body>
-<table>
-    <tr>
-      <td>uuid</td>
+{% extends 'base/base.html' %}
+{% block title %}
+	{{ option['title'] }}
+{% end %}
+{% block comtainer %}
+  <div class="container">
+  	<form class="form-inline">
+        <input class="form-control" type="text" placeholder="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <!-- book info table -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>uuid</td>
       <td>username</td>
       <td>password</td>
       <td>power</td>
-    </tr>
-    {% for book in opmaper['auth'] %}
-        <tr>
-            <td>
-                {{ book.uuid }}
-            </td>
-            <td>
-                {{ book.username }}
-            </td>
-            <td>
-                {{ book.password }}
-            </td>
-            <td>
-                {{ book.power }}
-            </td>
         </tr>
-    {% end %}
-</table>
-</body>
-</html>
+      </thead>
+      <tbody>
+        {% for auth in option['authinfo'] %}
+            <tr>
+                <td>{{ auth.uuid }}</td>
+                <td>{{ auth.username }}</td>
+                <td>{{ auth.password }}</td>
+                <td>{{ auth.power }}</td>
+            </tr>
+        {% end %}
+
+      </tbody>
+    </table>
+  </div>
+{% end %}

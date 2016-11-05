@@ -12,10 +12,10 @@ import tornado.ioloop
 
 import config
 from handler.auth.LoginHandler import LoginHandler, LogoutHandler, SignUpHandler
-from handler.auth.DelHandler import AuthDelHandler
+from handler.auth.DelHandler import AuthDelHandler, AuthInfoHandler
 from handler.IndexHandler import IndexHandler
 from handler.Book import AllBookInfoHandler, BookAdderHandler, BookEditerHandler,DelHandlerHandler
-from handler.BorrowReturnHandler import BorrowReturnHandler
+from handler.BorrowReturnHandler import BorrowReturnHandler, HadBorrowHandler
 from handler.message.SendMessageHandler import SendMessageHandler, SeeMessageHandler
 
 class Application(tornado.web.Application):
@@ -24,14 +24,17 @@ class Application(tornado.web.Application):
             (r"/", IndexHandler),
             (r'/login', LoginHandler),
             (r'/logout', LogoutHandler),
+            (r'/signup', SignUpHandler),
             (r'/allbookinfo', AllBookInfoHandler),
+            (r'/borrowreturn/(.+)', BorrowReturnHandler),
+            (r'/hadborrow', HadBorrowHandler),
+            (r'/message', SendMessageHandler),
+
             (r'/editbook/add', BookAdderHandler),
             (r'/editbook/edit/(.+)', BookEditerHandler),
             (r"/editbook/del", DelHandlerHandler),
-            (r'/signup', SignUpHandler),
-            (r'/authinfo', AuthDelHandler),
-            (r'/borrow', BorrowReturnHandler),
-            (r'/message', SendMessageHandler),
+            (r'/authinfo', AuthInfoHandler),
+            (r'/delauth', AuthDelHandler),
             (r'/seemessage', SeeMessageHandler),
         ]
         settings = {

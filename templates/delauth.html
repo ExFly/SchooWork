@@ -4,11 +4,11 @@
 {% end %}
 {% block comtainer %}
   <div class="container">
-    <form action="/editbook/del" method="post">
+    <form action="/delauth" method="post">
       {% raw xsrf_form_html() %}
       <div class="form-group">
-          <label>BookID</label>
-          <input type="text" class="form-control" name="id">
+          <label>Username</label>
+          <input type="text" class="form-control" name="username">
       </div>
       <input type="submit" class="btn btn-outline-primary">
     </form>

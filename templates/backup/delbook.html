@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>添加书信息</title>
+</head>
+<body>
+  <form action="/editbook/del" method="post">
+  <fieldset>
+    <legend>删除:</legend>
+    {% raw xsrf_form_html() %}
+    <label>id</label>
+    <input type="text" name="id" value=""><br>
+    <br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+</body>
+</html>

@@ -9,10 +9,12 @@ from .. import signin_
 class LoginHandler(BaseHandler):
 
     def get(self):
+        option = self.get_option('登陆|Index')
         if self.get_current_user():
             self.redirect('/')
         else:
-            self.render("login.html")
+            option['tp'] = 'login'
+            self.render("login.html", option=option)
 
     def post(self):
         username = self.get_argument('username')
@@ -45,18 +47,20 @@ class LogoutHandler(BaseHandler):
 class SignUpHandler(BaseHandler):
 
     def get(self):
+        option = self.get_option('登陆|Index')
         msg = ''
         if self.get_current_user():
             self.redirect("/")
         else:
-            self.render("signup.html", msg=msg)
+            option['tp'] = 'signup'
+            self.render("login.html", msg=msg, option=option)
 
     def post(self):
         session = Session()
 
         username = self.get_argument('username')
         password = self.get_argument('password')
-
+        option = self.get_option('登陆|Index')
         msg = ''
         if session.query(Auth).filter(Auth.username == username).first():
             msg = '账号存在'
@@ -72,4 +76,4 @@ class SignUpHandler(BaseHandler):
             self.redirect("/login")
         else:
             msg = '账号和密码不能为空'
-            self.render("signup.html", msg=msg)
+            self.render("signup.html", msg=msg, option=option)

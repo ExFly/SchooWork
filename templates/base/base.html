@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+    {% block title %}{% end %}
+  </title>
+  {% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  {% end %}
+
+  {% block link %}
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/bootstrap/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{static_url('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/narrow-jumbotron.css')}}">
+  {% end %}
+  <style type="text/css">
+    {% block style %}
+    {% end %}
+  </style>
+  
+</head>
+<body>
+  {% block header %}
+    {% include 'header.html' %}
+  {% end %}
+
+  {% block comtainer %}
+    {% include 'comtainer.html' %}
+  {% end %}
+ 
+  {% block footer %}
+    {% include 'footer.html' %}
+  {% end %}
+ 
+  {% block script %}
+    <script type="text/javascript" src="{{ static_url('js/jquery-3.1.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{ static_url('js/tether.min.js')}}"></script>
+    <script type="text/javascript" src="{{ static_url('js/bootstrap.js')}}"></script>
+  {% end %}
+</body>
+</html>
