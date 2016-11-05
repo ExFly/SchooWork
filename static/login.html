@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+      @media (min-width: 768px) {
+        .wi {
+          position: absolute;
+          width: 28rem;
+          top:30%;
+          left: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container wi">
+      <form class="f" action="/" method="post">
+        <!-- username -->
+        <div class="form-group row">
+          <label for="username" class="col-sm-2 col-form-label">username</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="username" name="username">
+          </div>
+        </div>
+
+        <!-- password -->
+        <div class="form-group row">
+          <label for="password" class="col-sm-2 col-form-label">password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" name="password">
+          </div>
+        </div>
+
+        <!-- checkbox -->
+        <div class="form-group row">
+          <label class="col-sm-2">Checkbox</label>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Check me out
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-sm-2 col-sm-10">
+            <input value="Login" class="btn btn-primary" type="submit" name="">
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/tether.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+  </body>
+</html>
