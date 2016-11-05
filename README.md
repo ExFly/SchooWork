@@ -1,7 +1,7 @@
 ![img](https://avatars1.githubusercontent.com/u/22613193?v=3&s=466)
 ### Author: [ExFly](https://github.com/ExFly)
 
-图书管理系统：软件工程作业,简单可用，简陋
+图书管理系统：软件工程作业,简单可用，简陋[演示动图](图书馆里系统演示.gif)
 
 # 目标
 
