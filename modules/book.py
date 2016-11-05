@@ -11,6 +11,6 @@ class Book(BaseModel):
     num = Column(VARCHAR(32))
     category = Column(VARCHAR(32)) # 类别
     publishing = Column(VARCHAR(32))# 出版社
-    pubdata = Column(Date)
+    pubdate = Column(Date)
     price = Column(Integer, default=0)
     picture = Column(VARCHAR(32), default='default.png') # 书封面path

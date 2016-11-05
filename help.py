@@ -17,13 +17,13 @@ def init():
     session.add_all([
         Auth(uuid=auth_test, username='test', password='test'),
         Auth(uuid=uuid.uuid4().hex, username='阿dee', password='toor'),
-        Book(name='book1', num='1', category='c1', pubdata=datetime.date.today()),
+        Book(name='book1', num='1', category='c1', pubdate=datetime.date.today()),
         Book(name='book2', num='1', category='c1',
-             pubdata=datetime.date.today()),
+             pubdate=datetime.date.today()),
         Book(name='book3', num='1', category='c1',
-             pubdata=datetime.date.today()),
+             pubdate=datetime.date.today()),
         Book(name='book4', num='1', category='c1',
-             pubdata=datetime.date.today()),
+             pubdate=datetime.date.today()),
     ])
     session.commit()
     session.add_all([

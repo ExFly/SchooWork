@@ -37,14 +37,14 @@ class BookAdderHandler(BaseHandler):
             num = self.get_argument('num')
             category = self.get_argument('category')
             publishing = self.get_argument('publishing')
-            pubdata = self.get_argument('pubdata')
+            pubdate = self.get_argument('pubdate')
             price = self.get_argument('price')
             picture = self.get_argument('picture') or 'default.png'
 
             session.add(
                 Book(name=name, num=num, category=category,
                      publishing=publishing,
-                     pubdata=pubdata, price=price, picture=picture)
+                     pubdate=pubdate, price=price, picture=picture)
             )
             session.commit()
             session.close()
