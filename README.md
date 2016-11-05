@@ -1,7 +1,7 @@
 ![img](https://avatars1.githubusercontent.com/u/22613193?v=3&s=466)
 ### Author: [ExFly](https://github.com/ExFly)
 
-图书管理系统：软件工程作业
+图书管理系统：软件工程作业,简单可用，简陋
 
 # 目标
 
@@ -17,9 +17,13 @@ virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-# 安装数据库
+# 安装数据库 导入测试数据库
 python modules/creatdb.py
+python help.py
 
+# 启动
+python app.py
+```
 # 测试
 
 # 备注
@@ -34,5 +38,3 @@ python modules/creatdb.py
 # log
 * 11.01 创建项目，并添加简单登陆功能，接下来设计操作流程，创建数据库表，不断的加入功能。
 * 11.03 项目实现部分功能，但借还书后，显示的个人结束记录有问题。明天先把留言功能搞一下
-
-* 所有网页增加option选项，但是没有全部改好，晚上回来继续搞
