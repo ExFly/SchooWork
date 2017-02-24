@@ -1,19 +1,10 @@
-![img](https://avatars1.githubusercontent.com/u/22613193?v=3&s=466)
-### Author: [ExFly](https://github.com/ExFly)
+# MovieShare
+* 大三下信息系统分析与设计2课程设计
+* 想借课程设计机会搭建一个电影推荐网站。网站包括基本的推荐功能，暂打算实现基本的基于用户的协同过滤推荐(User-based Collaborative Filtering Recommendation)系统
+* 基本部署方法见README-dev.md
+## 使用方法
 
-整理学校的作业，方便查看
+## 
 
-# 按分支整理 如下 list
-
-* [静态网页设计](https://github.com/ExFly/SchooWork/tree/web-design-static):[展示地址](https://exfly.github.io/ProjectExhibition/ExsxuHomepage/v2/index.html)
-* [图书管理系统](https://github.com/ExFly/SchooWork/tree/bms)
-
-# 资源
-* [开发笔记](https://github.com/ExFly/NoteBookForDevelop)
-
-# 备忘
-
-## 2016.10.07
-* 按分支保存不同的作业，每个分支保存一次作业
-* 每次开始新的科目的作业时候，先切换到master分支，之后再创建新的作业分支，保持每个分支的整洁
-*
+## 注
+当项目完成时，将README-dev.md文件合并到此文件中
