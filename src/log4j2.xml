@@ -2,11 +2,11 @@
 <Configuration status="WARN" monitorInterval="300">
   <Appenders>
   	<!-- Console -->
-  	<Console name="Console" target="SYSTEM_OUT">  
-      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>  
+  	<Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
     </Console>
     <!-- RollingFile -->
-    <RollingFile name="RollingFile" fileName="logs/info.log"
+    <RollingFile name="RollingFile" fileName="logs/MovieShare.log"
                  filePattern="logs/$${date:yyyy-MM}/info-%d{MM-dd-yyyy}-%i.log.gz">
       <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
       <Policies>
@@ -17,7 +17,7 @@
     </RollingFile>
   </Appenders>
   <Loggers>
-    <Logger name="test" level="trace" additivity="true">
+    <Logger name="runlog" level="trace" additivity="true">
         <AppenderRef ref="Console"/>
     </Logger>
     <Root level="trace">
