@@ -8,3 +8,5 @@
 * [logger](/)
 * [log4j配置方法](http://blog.csdn.net/flyliuweisky547/article/details/19421899)
 * [bootstrap视频教程](http://www.ycku.com/bootstrap/)
+* [HTTP Status Codes](http://www.restapitutorial.com/httpstatuscodes.html)
+* [RESTful API Design Cheat Sheet](https://github.com/RestCheatSheet/api-cheat-sheet#api-design-cheat-sheet)

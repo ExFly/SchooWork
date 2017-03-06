@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Movie Share</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- responsive-nav -->
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <script src="js/responsive-nav.js"></script>
+
+    <style type="text/css">
+      * {
+          outline: 1px dashed red;
+      }
+      html {font-size: 62.5%;/*10 ÷ 16 × 100% = 62.5%*/}
+      body {font-size: 1.4rem;/*1.4 × 10px = 14px */}
+      h1 { font-size: 2.4rem;/*2.4 × 10px = 24px*/}
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>header <div height="3" width="6">
+    </header>
+    <main class="container-fluid">
+      <div class="row">
+        <nav id="nav" class="col-md-2 .col-xs-12">
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+          </ul>
+        </nav>
+        <div class="col-md-10 .col-xs-12">
+          <h1>你好，世界！</h1>
+        </div>
+      </div>
+    </main>
+    <footer>footer</footer>    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      var navigation = responsiveNav("#nav");
+    </script>
+  </body>
+</html>
