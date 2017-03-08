@@ -3,7 +3,7 @@ package org.exfly.tools;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import org.exfly.models.Util;
+import org.exfly.models.DatabaseUtil;
 
 import org.exfly.config.Config;
 
@@ -11,7 +11,7 @@ public class InitDatabase {
 	
 	public void creatDatabase() {
 		Config configer = Config.getConfiger();
-		Connection conn = new Util().getConnect();
+		Connection conn = new DatabaseUtil().getConnectWithoutDB();
 		Statement stmt = null;
 		String DB_NAME = configer.getItem("database.name");
 		try{

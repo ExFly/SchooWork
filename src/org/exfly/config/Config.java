@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 public class Config {
 	
 	static protected Config Config_Instance=null;
-	public ResourceBundle rb = null;
+	private ResourceBundle rb = null;
 	
 	private Config() {
 		rb = ResourceBundle.getBundle("config");
