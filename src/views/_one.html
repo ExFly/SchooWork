@@ -1,0 +1,23 @@
+<!-- 第一部分  -->
+<div class="part-one">
+  <header class="topheader navbar-fixed-top">
+    <a href="/">header logo</a>
+    <br>
+    {% if not handler.current_user %}
+      <a href="/signin">signin</a>
+    {% else %}
+      <a href="/logout">logout</a>
+    {% end %}
+
+    <a href="/user">{{ handler.current_user }}</a>
+
+  </header>
+  <nav id="nav" class="col-sm-2 .col-xs-12">
+    <ul>
+    {% block leftnav %}
+      <!-- 左侧导航栏 -->
+      {% include "_nav.html" %}
+    {% end %}
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,12 @@
+<!-- 第一部分  -->
+<div class="part-one row">
+  <header>header</header>
+  <nav id="nav" class="col-sm-2 .col-xs-12">
+    <ul>
+    {% block leftnav %} 
+      <!-- 左侧导航栏 -->
+      {% include "_nav.html" %}
+    {% end %}
+    </ul>
+  </nav>
+</div>

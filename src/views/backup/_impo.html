@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    {% block meta %} {% end %}
+    {% block title %}
+      <title>Movie Share</title>
+    {% end %}
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/style-exfly.css') }}">
+    <!-- responsive-nav -->
+    <link rel="stylesheet" href="{{ static_url('css/responsive-nav.css') }}">
+    <script src="{{ static_url('js/responsive-nav.js') }}"></script>
+
+    {% block script %} {% end %}
+    {% block style %} {% end %}
+    <!-- debug -->
+    <style type="text/css">
+      * {
+          outline: 1px dashed red;
+      }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="container-fluid">
+    {% block body %}
+      <!-- 第一部分  -->
+      <div class="part-one row">
+        <header>header</header>
+        <nav id="nav" class="col-sm-2 .col-xs-12">
+          <ul>
+          {% block leftnav %} 
+            <!-- 左侧导航栏 -->
+            <li>1</li>
+          {% end %}
+          </ul>
+        </nav>
+      </div>
+
+      <!-- 第二部分 -->
+      <div class="row">
+        <div class="part-two col-sm-10 col-sm-offset-2 col-xs-12">
+          {% block maincontainer %} 
+            <!-- 内容部分可以任意写 -->
+          {% end %}
+          {% block footer %} 
+            <footer class="row">footer</footer>
+          {% end %}
+        </div>
+      </div>
+    {% end %}
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ static_url('js/jquery.min.js') }}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ static_url('js/bootstrap.min.js') }}"></script>
+    {% block jslib %} {% end %}
+    <script>
+      var navigation = responsiveNav("#nav");
+    </script>
+    {% block thelastccript %} {% end %}
+  </body>
+</html>

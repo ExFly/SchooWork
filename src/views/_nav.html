@@ -1,0 +1,3 @@
+{% for nav in handler.get_nav() %}
+<li><a href="{{ handler.get_nav()[nav]['url'] }}">{{ handler.get_nav()[nav]["name"] }}</a></li>
+{% end %}

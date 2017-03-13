@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+</head>
+<body>
+<form action="/signup" method="post">
+    {% raw xsrf_form_html() %}
+    <input type="text" name="username"><br>
+    <input type="text" name="password"><br>
+    <input type="submit" value="submit"><br>
+</form>
+</body>
+</html>

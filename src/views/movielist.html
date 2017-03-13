@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+{% block title %} Movie Share | index {% end %}
+{% block maincontainer %} 
+  <!-- 内容部分可以任意写 -->
+  <div class="row">
+    {% for movie in movies %}
+      <div class="col-sm-2">
+        <a href="/movie/{{ movie['id'] }}">
+            <img class="img-responsive center-block" src="{{ movie['playbill'] }}" alt="">
+            <p class="text-center">{{ movie['name_zh'] }} {{ movie['douban_score'] }}分</p>
+        </a>
+      </div>
+    {% end %}
+  </div>
+{% end %}

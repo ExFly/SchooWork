@@ -1,0 +1,60 @@
+{% extends "_base.html" %}
+{% block title %} {{ movie["name_zh"] }} | Movie Share {% end %}
+{% block maincontainer %}
+  <!-- 内容部分可以任意写 -->
+<main class="row">
+  <h1>{{ movie["name_zh"] }}</h1>
+  <div class="col-sm-2">
+    <a href="#" class="thumbnail">
+      <img class="img-responsive" src="{{ movie['playbill'] }}" >
+    </a>
+  </div>
+  <div class="col-sm-6">
+  <!-- 电影信息展示 -->
+    <dl class="dl-horizontal">
+      <dt>导演:</dt>
+      <dd>???</dd>
+      <dt>编剧:</dt>
+      <dd>???</dd>
+      <dt>主演:</dt>
+      <dd>???</dd>
+      <dt>类型:</dt>
+      <dd>???</dd>
+      <dt>官方网址:</dt>
+      <dd>???</dd>
+      <dt>上映时间:</dt>
+      <dd>???</dd>
+      <dt>IMDb链接:</dt>
+      <dd>tt1753383</dd>
+    </dl>
+  <!-- end 电影信息展示 -->
+  </div>
+  <div class="col-sm-4">
+  总评分:{{ movie["douban_score"] }}
+  </div>
+</main>
+<div class="row">
+    <a href="/collection/want/{{ movie['id'] }}">想看</a>
+    <a href="/collection/hadsaw/{{ movie['id'] }}">看过</a>
+    <a href="/comment/{{ movie['id'] }}">评价</a>
+</div>
+<br>
+<!--评论-->
+<div class="row">
+  <header>评论区</header>
+  <ul>
+    {% for comment in comments %}
+      <li>
+        <div>{{ comment['username'] }}</div>
+        <div>{{ comment['datetime'] }}</div>
+        <div>{{ comment['score'] }}</div>
+        <p>{{ comment['comment'] }}</p>
+      </li>
+    {% end %}
+  </ul>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% end %}

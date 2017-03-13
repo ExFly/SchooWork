@@ -1,10 +1,15 @@
-# MovieShare
-* 大三下信息系统分析与设计2课程设计
-* 想借课程设计机会搭建一个电影推荐网站。网站包括基本的推荐功能，暂打算实现基本的基于用户的协同过滤推荐(User-based Collaborative Filtering Recommendation)系统
-* 基本部署方法见README-dev.md
-## 使用方法
+# Project Start
 
-## 
+## balabala
+## 测试
+```
+nosetests -v src\mock\mock_patch.py --with-coverage --cover-package=src --cover-html
+```
 
-## 注
-当项目完成时，将README-dev.md文件合并到此文件中
+
+## 文档
+* [SQLAlchemy 1.1 - Textual SQL](http://docs.sqlalchemy.org/en/latest/core/tutorial.html#using-textual-sql)
+* [tornado 文档](http://www.tornadoweb.cn/documentation)
+* [tornado 文档2](http://tornado-zh.readthedocs.io/zh/latest/template.html)
+* [常用sql](http://www.cnblogs.com/sunada2005/p/3411873.html)
+* [爬虫](https://juejin.im/entry/583fdf2c128fe1005762e66c)

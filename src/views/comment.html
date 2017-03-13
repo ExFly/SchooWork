@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+{% block title %} Comment | Comment {% end %}
+{% block maincontainer %} 
+  <!-- 内容部分可以任意写 -->
+  <div class="row">
+    <form action="/comment/{{ movieid }}" method="post">
+        {% raw xsrf_form_html() %}
+        <input name="score" type="text">(0-10)<br>
+        <input name="comment" type="text"><br>
+        <input type="submit" value="评论">
+    </form>
+  </div>
+{% end %}

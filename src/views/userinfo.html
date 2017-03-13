@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+{% block title %} {{ handler.current_user }} | 用户信息 {% end %}
+{% block maincontainer %} 
+  <!-- 内容部分可以任意写 -->
+  <div class="row">
+    <dl class="dl-horizontal">
+      <dt>用户名:</dt>
+      <dd>{{ userinfo["username"] }}</dd>
+      <dt>用户权限:</dt>
+      <dd>{{ userinfo["permission"] }}</dd>
+      <dt>创建时间:</dt>
+      <dd>{{ userinfo["create_time"] }}</dd>
+      <dt>修改时间:</dt>
+      <dd>{{ userinfo["modify_time"] }}</dd>
+    </dl>
+  </div>
+{% end %}

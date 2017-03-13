@@ -1,0 +1,15 @@
+pyyaml
+sphinx
+jupyter
+
+# for testing
+nose
+coverage
+# tox
+# testscenarios 场景测试
+
+# project depence
+sqlalchemy
+pymysql
+bs4
+requests
