@@ -7,7 +7,7 @@ from tools.logger_ import runtime_logger, safe_logger
 
 etc = {}
 
-etc['debug'] = True
+etc['debug'] = False  #True
 etc['error'] = False
 etc['servs'] = 'AL/1.0.%s' % int(time.time())
 

@@ -7,14 +7,14 @@ handlers:
     formatter: basic
   runtimeFile:
     class: logging.handlers.RotatingFileHandler
-    filename: F:\ProjectD\MovieShare\log\runtime.log
+    filename: F:\ProjectD\SchooWork\log\runtime.log
     maxBytes: 10485760 # 10M
     backupCount: 50
     encoding: utf-8
     formatter: basic
   safeFile:
     class: logging.handlers.RotatingFileHandler
-    filename: F:\ProjectD\MovieShare\log\safe.log
+    filename: F:\ProjectD\SchooWork\log\safe.log
     maxBytes: 10485760 # 10M
     backupCount: 50
     encoding: utf-8
