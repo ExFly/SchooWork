@@ -7,7 +7,7 @@ from tools.logger_ import runtime_logger, safe_logger
 
 etc = {}
 
-etc['debug'] = False  #True
+etc['debug'] = False or True
 etc['error'] = False
 etc['servs'] = 'AL/1.0.%s' % int(time.time())
 
@@ -29,5 +29,3 @@ etc['database'] = {
     'pool_size': 200,
     'max_overflow': 220,
     }
-
-# print(etc)

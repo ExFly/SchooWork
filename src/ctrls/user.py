@@ -52,5 +52,6 @@ class Logout(BaseHandler):
 class UserInfoHandler(BaseHandler):
     @tornado.web.authenticated
     def get(self):
+        # users中的内容
         userinfo = self.datum('users').get_user_by_id(self.current_user)
         self.render('userinfo.html', userinfo=userinfo)

@@ -5,7 +5,7 @@
   <div class="row">
     {% for movie in movies %}
       <div class="col-sm-2">
-        <a href="/movie/{{ movie['id'] }}">
+        <a href="/movie/{{ movie['movieid'] }}">
             <img class="img-responsive center-block" src="{{ movie['playbill'] }}" alt="">
             <p class="text-center">{{ movie['name_zh'] }} {{ movie['douban_score'] }}分</p>
         </a>
