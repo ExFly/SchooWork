@@ -26,9 +26,11 @@
   .f-comment li {
     margin: 1rem 0;
   }
+
   .f-comment li > * {
     margin: 5px;
   }
+
   .horizontal-line{
     width: 100%;
     height: 1px;
@@ -38,17 +40,28 @@
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
   }
+
   .f-comment p {
     margin-bottom: 0;
   }
+
   .f-comment{
-    margin: 1rem 0;
+    /*margin: 1rem 0;*/
+  }
+  .f-right {
+    margin-top: 8rem;
   }
 }
 
 /*小屏幕*/
 @media screen and (max-width:768px) {
+    .f-movie-title {
+        font-size: 2rem;
+    }
 
+    .f-main-container {
+        margin: 0 1px;
+    }
 }
 
 .f-head-sculpture {

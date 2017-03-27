@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import org.exfly.config.Config;
 
-public class DatabaseUtil {
+public class DBConnector {
 	Config configer = Config.getConfiger();
 	protected Connection conn=null;
 	
@@ -36,6 +36,7 @@ public class DatabaseUtil {
 		}
 		return conn;
 	}
+	
 	protected void finalize() throws Throwable {
 		if (conn != null) {
 			conn.close();

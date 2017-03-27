@@ -1,6 +1,14 @@
 # 项目组注意事项
 
 
+## 17.03.27
+
+* 数据库的创建: 数据库使用utf-8，直接使用navcat创建会出问题，所以创建了一个创建数据库的java文件(src.org.exfly.tools.initDatabase.java)。执行这个文件会创建数据库。创建好数据库后，即可执行sql文件中的sql语句，创建表。
+* 日志 在test.org.exfly.logger中有使用的例子
+* 数据库连接 使用src.org.exfly.DBConnector中的getConect方法获得数据库连接，(整个方法中包含了对于数据库链接的配置文件读取操作。这样整合到一起，方便未来加连接池，提高性能)
+* 配置文件 配置文件src.config.properties 中保存了公共的配置文件，可以通过在这里配置静态不可更改的配置项，方便配置管理。使用方法Config configer = Config.getConfiger();这是一个单利模式实现的类。用configer.getItem();取一项配置项；
+* 数据库主键 uuid: 数据库主键为uuid生成的字符串，这样方便系统的扩展。所以插入数据时候，主键必须通过获得uuid生成。生成方法 String DBStaticTools.getUUID();
+
 ## 17.03.20
 * 每个人的样式文件以自己的姓名首字母命名，比如zhf的样式文件为style-f.css,文件里的class为.f-container{}
 * 项目模板改成[dash](https://github.com/ExFly/SchooWork/tree/MovieShare-javaee/doc/template/dash)，之前的[exfly](https://github.com/ExFly/SchooWork/tree/MovieShare-javaee/doc/template/exfly)已经废弃了
