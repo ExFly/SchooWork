@@ -37,10 +37,4 @@ public class DBConnector {
 		return conn;
 	}
 	
-	protected void finalize() throws Throwable {
-		if (conn != null) {
-			conn.close();
-			System.out.print("数据库断开链接");
-		}
-	}
 }
