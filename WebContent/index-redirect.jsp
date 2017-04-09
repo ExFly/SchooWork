@@ -8,6 +8,7 @@
 </head>
 <body>
 	<%
+	// 默认页面，通过重定向重新回到指定的页面 index。jsp
 	response.sendRedirect(request.getContextPath()+"/index");
 	%>
 </body>

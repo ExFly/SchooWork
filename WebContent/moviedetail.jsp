@@ -7,12 +7,13 @@
 <head>
   <%@ include file="base/_head.jsp"%>
   <title>title</title>
+  <link rel="stylesheet" type="text/css" href="${path}assets/css/style-exfly.css">
 </head>
 <body>
   <section id="container" >
     <%@ include file="base/_header.jsp"%>
     <%@ include file="base/_asidebar.jsp"%>
-    <%@ include file="base/_main.jsp"%>
+    <%@ include file="_moviedetail.jsp"%>
     <%@ include file="base/_footer.jsp"%>
   </section>
   

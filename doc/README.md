@@ -15,6 +15,7 @@
 /movie?movietype=sdfwef498qfewf498wefa6 查询相应类别的电影
 /movie?movieid=sdfwef498qfewf498wefa6 查询一个电影的详细信息
 /movie/recommend 推荐电影 -- 各种实现方法 举一例 协同推荐
+/movie/rank
 
 # 管理模块
 /admin 进入管理首页

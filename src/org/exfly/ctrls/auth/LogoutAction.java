@@ -29,7 +29,7 @@ public class LogoutAction extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		session.setAttribute("user_id", null);
-		response.sendRedirect(request.getContextPath()+"/auth/login.jsp");
+		response.sendRedirect(request.getContextPath()+"/");
 	}
 
 	/**

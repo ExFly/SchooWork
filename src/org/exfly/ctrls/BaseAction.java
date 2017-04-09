@@ -35,7 +35,6 @@ public class BaseAction extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// do nothin
-		doGet(request, response);
 	}
 
 }

@@ -1,0 +1,301 @@
+@charset "utf-8";
+/* CSS Document */
+
+.hm-hottop {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 36px;
+	line-height: 50px;
+	font-weight: bolder;
+	color: #333;
+	text-align: center;
+	height: 60px;
+}
+.hm-7 {
+	height: 250px;
+	border: 2px solid #CCC;
+	width: 300px;
+}
+.hm-picture {
+	vertical-align: middle;
+	height: 240px;
+	width: 170px;
+	position: relative;
+	top: 50%;
+}
+.hm-koubei {
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333;
+	display: inline;
+	float: left;
+	height: 30px;
+	width: 230px;
+}
+.hm-content {
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #09F;
+	height: 25px;
+	width: 250px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCC;
+	vertical-align: middle;
+}
+.hm-li {
+	display: inline;
+	float: right;
+	height: 220px;
+	width: 250px;
+}
+
+.hm-160 {
+	height: 230px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCC;
+}
+.hm-movie {
+	font-family: "幼圆";
+	font-size: 18px;
+	font-weight: bold;
+	color: #E60;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #E60;
+	text-indent: 1cm;
+}
+
+.hm-fenlei {
+	font-family: "宋体";
+	font-size: 18px;
+	color: #000;
+	text-indent: 0.5cm;
+	height: 40px;
+	width: 270px;
+}
+.hm-picture1 {
+	height: 280px;
+	width: 300px;
+}
+
+.hm-tudou {
+	font-family: "幼圆";
+	font-size: 24px;
+	line-height: 50px;
+	font-weight: bold;
+	color: #333;
+	letter-spacing: 0.8cm;
+	text-align: center;
+	height: 50px;
+}
+.hm-10 {
+}
+.hm-100 {
+	height: 20px;
+}
+.hm-101 {
+	height: 20px;
+	vertical-align: middle;
+	border-top-width: 1px;
+	border-top-style: dashed;
+	border-top-color: #999;
+}
+.hm-benzhou {
+	height: 310px;
+	width: 260px;
+}
+.hm-doubanmovie {
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #000;
+	display: inline;
+	float: left;
+	height: 40px;
+	width: 85px;
+	text-indent: 0.1cm;
+}
+.hm-top20 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #666;
+	display: inline;
+	float: left;
+	height: 40px;
+	width: 53px;
+	text-align: center;
+}
+.hm-117 {
+	float: left;
+	height: 40px;
+	width: 280px;
+}
+
+.hm-25 {
+	height: 25px;
+	width: 50px;
+}
+.hm-105 {
+	height: 105px;
+	width: 50px;
+}
+.hm-160 {
+	height: 90px;
+	width: 90px;
+	display: inline;
+	float: left;
+}
+.hm-50 {
+	display: inline;
+	float: left;
+	height: 100px;
+	width: 50px;
+}
+
+.hm-20 {
+	float: left;
+	height: 100px;
+	width: 15px;
+}
+.hm-70 {
+	height: 100px;
+	width: 120px;
+	display: inline;
+	float: left;
+}
+.hm-30 {
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #000;
+	float: left;
+	height: 25px;
+	width: 50px;
+	text-indent: 0.2cm;
+}
+.hm-30-100 {
+	font-family: "宋体";
+	font-size: 14px;
+	color: #333;
+	display: inline;
+	float: left;
+	height: 30px;
+	width: 120px;
+}
+.hm-30-50 {
+	display: inline;
+	float: left;
+	height: 20px;
+	width: 110px;
+}
+
+.hm-80 {
+	height: 45px;
+	width: 45px;
+	display: inline;
+	float: left;
+}
+
+
+
+.hm-2 {
+	height: 200px;
+}
+.hm-8 {
+	height: 1000px;
+	border: 1px dashed #CCC;
+}
+.hm-div1 {
+	height: 30px;
+	width: 100%;
+	float: left;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #09C;
+	text-indent: 0.5cm;
+	font-weight: bold;
+}
+.hm-div2 {
+	height: 140px;
+	width: 100%;
+	float: left;
+	font-family: "宋体";
+	font-size: 10px;
+	color: #666;
+	text-indent: 0.5cm;
+	overflow: hidden;
+}
+.hm-div3 {
+	float: left;
+	height: 10px;
+	width: 100%;
+	font-family: "幼圆";
+	font-size: 14px;
+	color: #F00;
+	text-indent: 0.5cm;
+}
+.hm-fenmame {
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #09C;
+	text-indent: 0.5cm;
+	float: left;
+	height: 35px;
+	width: 270px;
+	vertical-align: middle;
+}
+.hm-table {
+	float: left;
+	height: 820px;
+	width: 270px;
+	border: 1px solid #CCC;
+}
+.hm-picture2 {
+	text-align: center;
+	height: 130px;
+	width: 80px;
+	display: inline;
+	float: left;
+}
+.hm-left {
+	height: 95px;
+	width: 80px;
+}
+.hm-300-25 {
+	height: 25px;
+	width: 300px;
+}
+.hm-280 {
+	height: 125px;
+	width: 300px;
+	float: left;
+}
+.hm-625-300 {
+	height: 650px;
+	width: 320px;
+}
+.hm-filmname {
+	height: 30px;
+	width: 80px;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #09F;
+	text-align: center;
+	float: left;
+}
+
+.hm-3000 {
+	height: 2850px;
+}
+.hm-fenye {
+	width: 100%;
+	text-align: center;
+}
+
+
+.hm-170 {
+	height: 170px;
+}
+
+
+
+.jqstooltip { position: absolute;left: 0px;top: 0px;display: block;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;padding: 5px 5px 8px 5px;font: 10px arial, san serif;text-align: left;}
