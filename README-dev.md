@@ -11,3 +11,5 @@
 * [HTTP Status Codes](http://www.restapitutorial.com/httpstatuscodes.html)
 * [RESTful API Design Cheat Sheet](https://github.com/RestCheatSheet/api-cheat-sheet#api-design-cheat-sheet)
 * [JAVA操作数据库Datetime数据](https://segmentfault.com/a/1190000000729875)
+* [处理静态文件](http://www.developersite.org/905-18050-jsp)
+* [解决post乱码问题-吊炸天版](http://www.jianshu.com/p/998cc8a73584)

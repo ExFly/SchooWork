@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class IndexAction
  */
-@WebServlet("/")
+@WebServlet("/index")
 public class IndexAction extends BaseAction {
 	private static final long serialVersionUID = 1L;
        
@@ -34,6 +34,7 @@ public class IndexAction extends BaseAction {
 		response.getWriter().append(user_id);
 		
 		response.getWriter().append(" | index");
+		response.sendRedirect(request.getContextPath()+"/index.jsp");
 	}
 
 	/**

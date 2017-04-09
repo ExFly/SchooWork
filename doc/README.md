@@ -5,11 +5,26 @@
 # 基本的url
 ```
 / 主页
-/auth ?暂时保留
+/auth 保留
+/profile
+/auth?userid=sdfwef498qfewf498wefa6 查询某个人的个人信息
 /auth/login  登陆
 /auth/logout 注销
 /auth/signup 注册
+
+/movie?movietype=sdfwef498qfewf498wefa6 查询相应类别的电影
+/movie?movieid=sdfwef498qfewf498wefa6 查询一个电影的详细信息
+/movie/recommend 推荐电影 -- 各种实现方法 举一例 协同推荐
+
+# 管理模块
+/admin 进入管理首页
+/admin/movie 列表形式展示所有的电影 要求分页
+/admin/movie?id=sdfwef498qfewf498wefa6 编辑相应的电影
+/admin/user 列表形式展示所有的人信息 要求分页
+/admin/user?id=sdfwef498qfewf498wefa6 编辑相应的个人信息
 ```
+
+
 
 # 基本文件组织方式
 

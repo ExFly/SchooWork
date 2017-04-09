@@ -1,0 +1,69 @@
+* {outline: 1px dashed red;}
+
+/*大屏幕*/
+@media screen and (min-width:768px) {
+  .f-poster-picture li{
+    width: 19.7%;
+    height: auto;
+  }
+
+  .f-main-container {
+    margin: 0 1%;
+  }
+
+  .f-block {
+    margin: 2rem 0;
+  }
+
+  .f-block >header {
+    position: relative;
+    font-size: 1.6rem;
+    color: #007722;
+    margin: 0.6rem 0;
+  }
+
+  .f-comment li {
+    margin: 1rem 0;
+  }
+
+  .f-comment li > * {
+    margin: 5px;
+  }
+
+  .horizontal-line{
+    width: 100%;
+    height: 1px;
+    background: #aaa;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+  }
+
+  .f-comment p {
+    margin-bottom: 0;
+  }
+
+  .f-comment{
+    /*margin: 1rem 0;*/
+  }
+  .f-right {
+    margin-top: 8rem;
+  }
+}
+
+/*小屏幕*/
+@media screen and (max-width:768px) {
+    .f-movie-title {
+        font-size: 2rem;
+    }
+
+    .f-main-container {
+        margin: 0 1px;
+    }
+}
+
+.f-head-sculpture {
+    width: 4rem;
+    width: 4rem;
+}
