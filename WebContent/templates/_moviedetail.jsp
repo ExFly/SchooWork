@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<%
+org.exfly.models.Movie movie =(org.exfly.models.Movie) request.getAttribute("movie_info");
+%>
 <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -11,29 +14,29 @@
               <!-- exfly start -->
               <div class="f-left col-sm-9">
                 <section class="row">
-                  <h1 class="f-movie-title">美女与野兽 Beauty and the Beast (2017)</h1>
+                  <h1 class="f-movie-title"><%= movie.getName_zh()%> | <%= movie.getName_en()%></h1>
                   <main>
                     <div class="col-sm-2">
-                      <img class="img-responsive" src="assets/img/movies/BeautyandtheBeast.png">
+                      <img class="img-responsive" src="${path}<%= movie.getPlaybill() %>">
                     </div>
                       <div class="col-sm-7">
-                        <p>导演:<a href="#"> 比尔·康顿</a>/  </p>
-                        <p>编剧:<a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  </p>
+                        <p>导演:<a href="#"> 比尔·康顿</a></p>
+                        <p>编剧:<a href="#"> 比尔·康顿</a></p>
                         <p>主演:<a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  </p>
-                        <p>类型:<a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  </p>
-                        <p>语言:<a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  <a href="#"> 比尔·康顿</a>/  </p>
+                        <p>类型: <%= movie.getFilmtype()%></p>
+                        <p>语言: <%= movie.getLanguage()%></p>
                         <p>上映时间: 2017-03-17(中国大陆/美国)</p>
                         <p>片长: 130分钟</p>
-                        <p>IMDb链接:<a href="#">tt2771200</a></p>
+                        <p>IMDb链接: <a href="http://www.imdb.com/title/<%= movie.getIMDbURI()%>"><%= movie.getIMDbURI()%></a></p>
                       </div>
                     <div class="col-sm-3">
-                      豆瓣评分 7.5 <br>
+                      豆瓣评分 <%= movie.getScore()%> <br>
                       好于 67% 爱情片 <br>
                       好于 67% 奇幻片 <br>
 
                       <div class="progress">
-  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">7.5分
-    <span class="sr-only">45% Complete</span>
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<%= movie.getScore()*10 %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= movie.getScore()*10 %>%"><%= movie.getScore()*10 %>分
+    <span class="sr-only"><%= movie.getScore()*10 %> 分</span>
   </div>
 </div>
                     </div>
@@ -53,28 +56,28 @@
 
                   <!-- 电影简介 -->
                   <section class="f-block">
-                    <header>美女与野兽的剧情简介</header>
-                    <article>···《美女与野兽》根据迪士尼1991年经典动画片及闻名全球的经典童话改编，讲述了少女贝儿的奇幻旅程——为了解救触怒野兽的父亲，勇敢善良的她只身一人来到古堡，代替父亲被囚禁其中。贝儿克服了恐惧，和城堡里的魔法家具们成为了朋友，也渐渐发现野兽其实是受了诅咒的王子，他可怖的外表下藏着一颗善良温柔的内心；这个故事也带领观众明白——美不仅仅是外表，更重要的是内心... <a href="#">详细信息</a></article>
+                    <header><%= movie.getName_zh() %>的剧情简介</header>
+                    <article><%= movie.getSummary() %> 。。。<a href="#">详细信息</a></article>
                   </section>
 
                   <!-- 图片区 -->
                   <section class="f-block">
-                    <header>金刚狼3：殊死一战的海报和图片 <a href="#">更多图片...</a></header>
+                    <header><%= movie.getName_zh() %>的海报和图片 <a href="#">更多图片...</a></header>
                     <ul class="list-inline  f-poster-picture">
-                      <li><img class="img-thumbnail" src="assets/img/movies/playpill.png"></li>
-                      <li><img class="img-thumbnail" src="assets/img/movies/playpill.png"></li>
-                      <li><img class="img-thumbnail" src="assets/img/movies/playpill.png"></li>
-                      <li><img class="img-thumbnail" src="assets/img/movies/playpill.png"></li>
-                      <li><img class="img-thumbnail" src="assets/img/movies/playpill.png"></li>
+                      <li><img class="img-thumbnail" src="${path}assets/img/movies/playpill.png"></li>
+                      <li><img class="img-thumbnail" src="${path}assets/img/movies/playpill.png"></li>
+                      <li><img class="img-thumbnail" src="${path}assets/img/movies/playpill.png"></li>
+                      <li><img class="img-thumbnail" src="${path}assets/img/movies/playpill.png"></li>
+                      <li><img class="img-thumbnail" src="${path}assets/img/movies/playpill.png"></li>
                     </ul>
                   </section>
 
                   <!-- 评论区 -->
                   <section class="f-comment f-block">
-                    <header>美女与野兽的影评 <a href="#">全部952条</a></header>
+                    <header><%= movie.getName_zh() %>的影评 <a href="#">全部952条</a></header>
                     <ul class="list-unstyled">
                       <li>
-                        <header><img class="f-head-sculpture" src="assets\img\friends\fr-03.jpg">Christopher R. 2017-03-17 07:29:25</header>
+                        <header><img class="f-head-sculpture" src="${path}assets/img/friends/fr-03.jpg">Christopher R. 2017-03-17 07:29:25</header>
                         <main>
                           <p>剧情是没啥好说的，但里面的计可是不得了。Disney 这次下重手请来 Jacqueline Durran 来做服装设计，看来是直指明年的奥斯卡服装类大奖了。 Jacqueline Durran 这么多年在世界范围内各个颁奖礼中收获了 22 次提名， 16 次中标，包括 3 次的奥斯卡提名，当中凭借 Anna Kar...<a href="#">(167回应)</a></p>
                         </main>
@@ -82,7 +85,7 @@
                         <div class="horizontal-line"></div>
                       </li>
                       <li>
-                        <header><img class="f-head-sculpture" src="assets\img\friends\fr-04.jpg">Christopher R. 2017-03-17 07:29:25</header>
+                        <header><img class="f-head-sculpture" src="${path}assets/img/friends/fr-04.jpg">Christopher R. 2017-03-17 07:29:25</header>
                         <main>
                           <p>剧情是没啥好说的，但里面的服装设计可是不得了。Disney 这次下重手请来 Jacqueline Durran 来做服装设计，看来是直指明年的奥斯卡服装类大奖了。 Jacqueline Durran 这么多年在世界范围内各个颁奖礼中收获了 22 次提名， 16 次中标，包括 3 次的奥斯卡提名，当中凭借 Anna Kar...<a href="#">(167回应)</a></p>
                         </main>
@@ -91,7 +94,7 @@
                       </li>
 
                       <li>
-                        <header><img class="f-head-sculpture" src="assets\img\friends\fr-09.jpg">Christopher R. 2017-03-17 07:29:25</header>
+                        <header><img class="f-head-sculpture" src="${path}assets/img/friends/fr-09.jpg">Christopher R. 2017-03-17 07:29:25</header>
                         <main>
                           <p>剧情是没啥好说的，但里面的服装设计可是不得了。Disney 这次下重手请来 Jacqueline Durran 来做服装设计，看来是直指明年的奥斯卡服装类大奖了。 Jacqueline Durran 这么多年在世界范围内各个颁奖礼中收获了 22 次提名， 16 次中标，包括 3 次的奥斯卡提名，当中凭借 Anna Kar...<a href="#">(167回应)</a></p>
                         </main>

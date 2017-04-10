@@ -15,8 +15,8 @@
   	<li><a href="<%= request.getContextPath()%>/signup">signup</a></li>
   	<li><a href="<%= request.getContextPath()%>/login">login</a></li>
   	<li><a href="<%= request.getContextPath()%>/logout">logout</a></li>
-  	<li><a href="<%= request.getContextPath()%>/rank.jsp">rank</a></li>
-  	<li><a href="<%= request.getContextPath()%>/moviedetail.jsp">moviedetail</a></li>
+  	<li><a href="<%= request.getContextPath()%>/templates/rank.jsp">rank</a></li>
+  	<li><a href="<%= request.getContextPath()%>/movie/id?id=1">肖申克的救赎 详细信息</a></li>
   </ul>
   
   <ul>

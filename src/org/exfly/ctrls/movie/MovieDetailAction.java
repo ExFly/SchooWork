@@ -1,7 +1,6 @@
-package org.exfly.ctrls;
+package org.exfly.ctrls.movie;
 
 import java.io.IOException;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -9,19 +8,19 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import org.exfly.ctrls.BaseAction;
 
 /**
- * Servlet implementation class IndexAction
+ * Servlet implementation class MovieDetailAction
  */
-@WebServlet("/index")
-public class IndexAction extends BaseAction {
+@WebServlet("/movie/id")
+public class MovieDetailAction extends BaseAction {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see BaseAction#BaseAction()
      */
-    public IndexAction() {
+    public MovieDetailAction() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,20 +29,21 @@ public class IndexAction extends BaseAction {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		super.doGet(request, response);
-		
+		// TODO Auto-generated method stub
+		String movie_id = request.getParameter("id");
+		org.exfly.models.Movie movie = org.exfly.models.Movie.getMoviebyID(movie_id);
+		request.setAttribute("movie_info", movie);  //添加数据
 		ServletContext application = this.getServletContext();
-		RequestDispatcher rd = application.getRequestDispatcher("/templates/index.jsp");
+		RequestDispatcher rd = application.getRequestDispatcher("/templates/moviedetail.jsp");
 		rd.forward(request, response);
-		
-//		response.sendRedirect(request.getContextPath()+"/templates/index.jsp");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		super.doPost(request, response);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

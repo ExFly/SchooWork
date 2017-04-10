@@ -17,3 +17,4 @@ def main():
         path = r'/movie/img/playbill/'+ url.split(r'/')[-1]
         ud.affect(r"update movies set playbill=:path where id=:id;",
                   path=path, id=movie["id"])
+        

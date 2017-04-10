@@ -9,18 +9,18 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="#"><img src="${path}assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="<%= request.getContextPath()%>">
                           <i class="fa fa-dashboard"></i>
                           <span>首页</span>
                       </a>
                   </li>
 
 				  <li>
-                      <a href="index.html">
+                      <a href="#">
                           <i class="fa fa-dashboard"></i>
                           <span>选电影</span>
                       </a>
@@ -40,7 +40,7 @@
                   -->
                   
                   <li>
-                      <a href="index.html">
+                      <a href="#">
                           <i class="fa fa-dashboard"></i>
                           <span>排行</span>
                       </a>
