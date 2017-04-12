@@ -3,6 +3,7 @@
 * 每一个链接都带一个参数 from,标记从哪里来
 
 # 基本的url
+
 ```
 / 主页
 /auth 保留
@@ -16,6 +17,9 @@
 /movie/id?id=sdfwef498qfewf498wefa6 查询一个电影的详细信息
 /movie/recommend 推荐电影 -- 各种实现方法 举一例 协同推荐
 /movie/rank
+/movie/comment?type=comment&movieid=asdfd 评论
+/movie/comment?type=want&movieid=asdfd 想看
+/movie/comment?type=hadsaw&movieid=asdfd 看过
 
 # 管理模块
 /admin 进入管理首页
@@ -53,8 +57,9 @@
 
 
 ## notice
+
 ### 17.03.29
-* 登陆注册部分，登陆后，会在session中加入一个 user_id 的的属性，通过这个string值可以确定用户
+* 登陆注册部分，登陆后，会在session中加入一个 user_id 的的属性，通过这个String值可以确定用户
 
 ### 17.03.27
 

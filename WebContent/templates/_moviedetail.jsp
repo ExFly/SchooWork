@@ -14,10 +14,10 @@ org.exfly.models.Movie movie =(org.exfly.models.Movie) request.getAttribute("mov
               <!-- exfly start -->
               <div class="f-left col-sm-9">
                 <section class="row">
-                  <h1 class="f-movie-title"><%= movie.getName_zh()%> | <%= movie.getName_en()%></h1>
+                  <h1 class="f-movie-title"><%= movie.getName_zh()%></h1>
                   <main>
                     <div class="col-sm-2">
-                      <img class="img-responsive" src="${path}<%= movie.getPlaybill() %>">
+                      <img style="width:110%;" src="<%= movie.getPlaybill() %>">
                     </div>
                       <div class="col-sm-7">
                         <p>导演:<a href="#"> 比尔·康顿</a></p>
@@ -46,9 +46,9 @@ org.exfly.models.Movie movie =(org.exfly.models.Movie) request.getAttribute("mov
                   
                   <section>
                     <ul class="list-inline">
-                      <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <a href="#">想看</a></li>
-                      <li><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> <a href="#">看过</a></li>
-                      <li><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <a href="#">评价&写影评</a></li>
+                      <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <a href="${path}movie/comment?type=want&movieid=<%= movie.getId()%>">想看</a></li>
+                      <li><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> <a href="${path}movie/comment?type=hadsaw&movieid=<%= movie.getId()%>">看过</a></li>
+                      <li><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <a href="${path}movie/comment?type=comment&movieid=<%= movie.getId()%>">评价&写影评</a></li>
                       <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> <a href="#">分享到</a></li>
                     </ul>
 

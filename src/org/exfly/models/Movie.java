@@ -3,6 +3,11 @@ package org.exfly.models;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Movie {
 	
@@ -55,6 +60,100 @@ public class Movie {
 		return movie;
 	}
 	
+	public static void commentMovie(String userid, String movieid, int score, String comment) {
+		
+		String sql = "";
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+		
+		try{
+			conn = new DBConnector().getConect();
+			
+			// TODO: 没有限制重复评分
+			String insertSQL = "insert into user_movie_impressions(id,userid,movieid,score,comment,datetime) values (?,?,?,?,?,?);";
+			pstmt = conn.prepareStatement(insertSQL);
+		    String _id = DBStaticTools.getUUID();
+		    pstmt.setString(1, _id);
+		    pstmt.setString(2, userid);
+		    pstmt.setString(3, movieid);
+		    pstmt.setInt(4, score);
+		    pstmt.setString(5, comment);
+		    pstmt.setTimestamp(6, new java.sql.Timestamp(System.currentTimeMillis()));
+		    
+		    pstmt.executeUpdate();
+		}
+		catch(SQLException e) {
+			
+			String insertSQL2 = "update user_movie_impressions set score=?,comment=?,datetime=? where userid=?,movieid=?;";
+			try {
+				pstmt = conn.prepareStatement(insertSQL2);
+			    pstmt.setInt(1, score);
+			    pstmt.setString(2, comment);
+			    pstmt.setTimestamp(3, new java.sql.Timestamp(System.currentTimeMillis()));
+			    pstmt.setString(4, userid);
+			    pstmt.setString(5, movieid);
+			    pstmt.executeUpdate();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		    
+		}
+	}
+	
+	public static void wantedMovie(String userid, String movieid) {
+		// TODO: 想看电影　增加判断条件
+		// TODO: 没有防止重复评论
+		_hadsaw_wanted( userid, movieid, "want");
+	}
+	
+	public static void hadsawMovie(String userid, String movieid) {
+		// TODO:　看过电影　增加判断条件
+		// TODO: 没有防止重复评论
+		_hadsaw_wanted( userid, movieid, "hadsaw");
+	}
+	
+	protected static void _hadsaw_wanted(String userid, String movieid, String type) {
+		String sql = "";
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+		
+		try{
+			conn = new DBConnector().getConect();
+			
+//			/*验证是否已经存在用户*/
+//			String querySQL = "select * from user_movie_impressions where =?;";
+//			pstmt = conn.prepareStatement(querySQL);
+//			pstmt.setString(1, _username);
+//			ResultSet rs = pstmt.executeQuery();
+//			if(rs.next()){
+//				return;
+//			}
+			
+			/*如果不存在此用户，则可以注册*/
+			String insertSQL = "insert into user_movie_impressions(id,userid,movieid,hadsaw_wanted) values (?,?,?,?);";
+			pstmt = conn.prepareStatement(insertSQL);
+		    String _id = DBStaticTools.getUUID();
+		    pstmt.setString(1, _id);
+		    pstmt.setString(2, userid);
+		    pstmt.setString(3, movieid);
+		    pstmt.setString(4, type);
+		    pstmt.executeUpdate();
+		}
+		catch(SQLException e) {
+			
+			String insertSQL2 = "update user_movie_impressions set hadsaw_wanted=? where userid=?,movieid=?;";
+			try {
+				pstmt = conn.prepareStatement(insertSQL2);
+			    pstmt.setString(1, type);
+			    pstmt.setString(2, userid);
+			    pstmt.setString(3, movieid);
+			    pstmt.executeUpdate();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		    
+		}
+	}
 	
 	public String getId() {
 		return id;
