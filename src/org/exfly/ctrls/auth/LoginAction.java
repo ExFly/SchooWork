@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.exfly.ctrls.BaseAction;
+import org.exfly.models.auth.User;
 
 /**
  * Servlet implementation class LoginAction

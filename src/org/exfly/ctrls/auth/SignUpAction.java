@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.exfly.ctrls.BaseAction;
-import org.exfly.ctrls.auth.User;
+import org.exfly.models.auth.User;
 /**
  * Servlet implementation class Signup
  */
@@ -42,17 +42,24 @@ public class SignUpAction extends BaseAction {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String password_same = request.getParameter("password_same");
+		if(username.equals("") || password.equals("")) {
+			response.sendRedirect(request.getContextPath()+"/auth/signup.jsp");
+			return;
+		}
 		if(!password.equals(password_same)){
 			response.sendRedirect(request.getContextPath()+"/auth/signup.jsp");
+			return;
 		}
 		String result = new User().signUp(username, password);
-		if(result == null){
+		if(result == null || result.equals("")){
 			/* 用户名存在 */
 			response.sendRedirect(request.getContextPath()+"/auth/signup.jsp");
+			return;
 		}else {
 			/* 注册成功 */
 			
 			response.sendRedirect(request.getContextPath()+"/login");
+			return;
 		}
 //		response.setContentType("text/html; charset=UTF-8");
 //		response.getWriter().append(username).append(password);
