@@ -6,7 +6,7 @@
 <html>
 <head>
   <%@ include file="../base/_head.jsp"%>
-  <title>title</title>
+  <title><%= ((org.exfly.models.Movie)request.getAttribute("movie_info")).getName_zh()%> | 电影详细信息</title>
   <link rel="stylesheet" type="text/css" href="${path}assets/css/style-exfly.css">
 </head>
 <body>

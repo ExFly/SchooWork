@@ -6,17 +6,28 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Test 功能列表</title>
+  <title>Feature List | Movie Share</title>
   <link rel="stylesheet" type="text/css" href="${path}assets/css/style-exfly.css">
 </head>
 <body>
   <ul>
-  	<li><a href="<%= request.getContextPath()%>">主页</a></li>
-  	<li><a href="<%= request.getContextPath()%>/signup">signup</a></li>
-  	<li><a href="<%= request.getContextPath()%>/login">login</a></li>
-  	<li><a href="<%= request.getContextPath()%>/logout">logout</a></li>
-  	<li><a href="<%= request.getContextPath()%>/templates/rank.jsp">rank</a></li>
-  	<li><a href="<%= request.getContextPath()%>/movie/id?id=1">肖申克的救赎 详细信息</a></li>
+  	<li>
+  		<h1>Simple User</h1>
+  		<ul>
+	  		<li><a href="<%= request.getContextPath()%>">主页</a></li>
+	  		<li><a href="<%= request.getContextPath()%>/signup">注册</a></li>
+	  		<li><a href="<%= request.getContextPath()%>/login">登陆</a></li>
+	  		<li><a href="<%= request.getContextPath()%>/logout">注销</a></li>
+	  		<li><a href="<%= request.getContextPath()%>/templates/rank.jsp">排行榜</a></li>
+	  		<li><a href="<%= request.getContextPath()%>/movie/id?id=1">肖申克的救赎 详细信息</a></li>
+  		</ul>
+  	</li>
+  	<li>
+  		<h2>Administrator</h2>
+  		<ul>
+  			<li><a href="<%= request.getContextPath()%>/admin">admin</a></li>
+  		</ul>
+  	</li>
   </ul>
   
   <ul>
