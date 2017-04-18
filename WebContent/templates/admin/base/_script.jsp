@@ -5,9 +5,3 @@
 <script src="${admin_path}bootstrap/js/bootstrap.min.js"></script>
 <script src="${admin_path}vendors/easypiechart/jquery.easy-pie-chart.js"></script>
 <script src="${admin_path}assets/scripts.js"></script>
-<script>
-$(function() {
-    // Easy pie charts
-    $('.chart').easyPieChart({animate: 1000});
-});
-</script>

@@ -5,12 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import org.exfly.models.DBConnector;
-import org.exfly.models.DBStaticTools;;
+import org.exfly.models.DBStaticTools;
 
 
 public class User {
@@ -81,6 +83,7 @@ public class User {
 			if(rs.next()){
 				user.id = rs.getString("id");
 				user.username = rs.getString("username");
+				user.password = rs.getString("password");
 				user.permission = rs.getInt("permission");
 			}
 		}catch(Exception e) {
@@ -203,5 +206,37 @@ public class User {
 			runinglogger.debug(msg);
 		}
 		return result;
+	}
+	
+	public static List<User> getUserbyPage(int page, int sizePerPage){
+		List<User> usersList = new LinkedList<User>();
+		
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+		String result = null;
+		User user = null;
+		try{
+			conn = new DBConnector().getConect();
+			
+			/*验证是否已经存在用户*/
+			String querySQL = "select * from users ORDER BY create_time desc limit ?,?;";
+			pstmt = conn.prepareStatement(querySQL);
+			pstmt.setInt(1, (page-1)*sizePerPage);
+			pstmt.setInt(2, sizePerPage);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				user = new User();
+				user.id = rs.getString("id");
+				user.username = rs.getString("username");
+				user.password = rs.getString("password");
+				user.permission = rs.getInt("permission");
+				usersList.add(user);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return usersList;
 	}
 }

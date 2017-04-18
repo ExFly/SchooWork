@@ -5,9 +5,9 @@
 <!DOCTYPE html>
 <html class="no-js">
     <head>
-        <title>Admin Home Page</title>
+        <title>用户信息 |Admin</title>
         <%@ include file="base/_head.jsp"%>
-	    <link href="${admin_path}vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+        <link href="${admin_path}assets/DT_bootstrap.css" rel="stylesheet" media="screen">
     </head>
 
     <body>
@@ -20,7 +20,7 @@
             		<%@ include file="base/_asidenav.jsp"%>
                 </div>
                 <div class="span9" id="content"> 
-            		<%@ include file="_index.jsp"%>
+            		<%@ include file="_user_info.jsp"%>
                 </div>
             </div>
             <hr>
@@ -29,11 +29,9 @@
             </footer>
         </div>
         <%@ include file="base/_script.jsp"%>
+        <script src="${admin_path}assets/DT_bootstrap.js"></script>
         <script>
-			$(function() {
-			    // Easy pie charts
-			    $('.chart').easyPieChart({animate: 1000});
-			});
-</script>
+        $(function() {});
+        </script>
     </body>
 </html>
