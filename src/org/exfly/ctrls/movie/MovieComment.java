@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 /**
  * Servlet implementation class MovieComment
  */
@@ -46,6 +45,7 @@ public class MovieComment extends HttpServlet {
 			org.exfly.models.Movie.hadsawMovie(userid, movieid);
 			response.sendRedirect(request.getContextPath()+"/movie/id?id="+movieid);
 			return;
+			
 		}else if(type.equals("comment")){
 			request.setAttribute("movieid", movieid);
 			ServletContext application = this.getServletContext();

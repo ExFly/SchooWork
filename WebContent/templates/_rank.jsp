@@ -65,7 +65,7 @@ int page_number = (Integer)request.getAttribute("page_rank_action");
 	}catch(Exception e){
 		e.printStackTrace();
 	}
-%>
+%> 
         </div>        
         </div>
         <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12 center "> 

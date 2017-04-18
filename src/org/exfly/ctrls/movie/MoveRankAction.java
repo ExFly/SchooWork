@@ -44,8 +44,9 @@ public class MoveRankAction extends HttpServlet {
 			page = Integer.parseInt(request.getParameter("page"));
 			request.setAttribute("page_rank_action", page);
 		}
-		Logger runinglogger = LogManager.getLogger("runing.test");
 		
+		/* debug log */
+		Logger runinglogger = LogManager.getLogger("runing.test");
 		runinglogger.debug(request.getRequestURI()+"?"+request.getQueryString());
 		
 		List<Movie> movieList = Movie.getMoviesbyPage(page, sizePage);

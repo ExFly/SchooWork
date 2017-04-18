@@ -19,7 +19,7 @@ public class Movie {
 	String playbill;
 	java.time.Clock len_film;
 	String productor;
-	int score;
+	float score;
 	String language;
 	String foreshow;
 	String summary;
@@ -56,7 +56,7 @@ public class Movie {
 				movie.setPlaybill(rs.getString("playbill"));
 //				movie.setLen_film(rs.getTime("len_film"));
 				movie.setProductor(rs.getString("producer"));
-				movie.setScore(rs.getInt("douban_score"));
+				movie.setScore(rs.getFloat("douban_score"));
 				movie.setLanguage(rs.getString("language"));
 				movie.setForeshow(rs.getString("foreshow"));
 				movie.setSummary(rs.getString("summary"));
@@ -92,7 +92,7 @@ public class Movie {
 				movie.setPlaybill(rs.getString("playbill"));
 //				movie.setLen_film(rs.getTime("len_film"));
 				movie.setProductor(rs.getString("producer"));
-				movie.setScore(rs.getInt("douban_score"));
+				movie.setScore(rs.getFloat("douban_score"));
 				movie.setLanguage(rs.getString("language"));
 				movie.setForeshow(rs.getString("foreshow"));
 				movie.setSummary(rs.getString("summary"));
@@ -105,7 +105,7 @@ public class Movie {
 		return movie;
 	}
 	
-	public static void commentMovie(String userid, String movieid, int score, String comment) {
+	public static void commentMovie(String userid, String movieid, float score, String comment) {
 		
 		String sql = "";
 		PreparedStatement pstmt = null;
@@ -121,7 +121,7 @@ public class Movie {
 		    pstmt.setString(1, _id);
 		    pstmt.setString(2, userid);
 		    pstmt.setString(3, movieid);
-		    pstmt.setInt(4, score);
+		    pstmt.setFloat(4, score);
 		    pstmt.setString(5, comment);
 		    pstmt.setTimestamp(6, new java.sql.Timestamp(System.currentTimeMillis()));
 		    
@@ -132,7 +132,7 @@ public class Movie {
 			String insertSQL2 = "update user_movie_impressions set score=?,comment=?,datetime=? where userid=?,movieid=?;";
 			try {
 				pstmt = conn.prepareStatement(insertSQL2);
-			    pstmt.setInt(1, score);
+			    pstmt.setFloat(1, score);
 			    pstmt.setString(2, comment);
 			    pstmt.setTimestamp(3, new java.sql.Timestamp(System.currentTimeMillis()));
 			    pstmt.setString(4, userid);
@@ -236,10 +236,10 @@ public class Movie {
 	public void setProductor(String productor) {
 		this.productor = productor;
 	}
-	public int getScore() {
+	public float getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(float score) {
 		this.score = score;
 	}
 	public String getLanguage() {
