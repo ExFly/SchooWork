@@ -1,6 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.LinkedList" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="org.exfly.models.Movie" %>
+<%@ page import="org.apache.logging.log4j.LogManager" %>
+<%@ page import="org.apache.logging.log4j.Logger" %>
+<%-- <%
+//http://www.jianshu.com/p/bad037991ad2
+	List<Movie> movieList = (List<Movie>) request.getAttribute("movie_list_rank_action");
+	System.out.println(movieList);
+	Iterator<Movie> it = movieList.iterator();
+	while (it.hasNext()) {
+		Movie movie = it.next();
+		%>
+		
+		<%
+	}
+%> --%>
+<%
+int page_number = (Integer)request.getAttribute("page_rank_action");
+
+%>
+
           <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -19,20 +41,35 @@
         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
         <div class="col-lg-7 col-md-7 col-xs-12 col-sm-12 center ">
         <div>
-        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 center">
-        <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 center "><div class="hm-picture"><a href="paihangbang.html"><img class="img-responsive center-block " src="${path}assets/movies/imags/1.jpg" width="150" height="210" /></a></div></div>
-        <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12 center "><div class="hm-div1"><a href="paihangbang.html">健忘村 / The Village of No Return [可播放]</a></div>
-<div class="hm-div2">段小楼（张丰毅）与程蝶衣（张国荣）是一对打小一起长大的师兄弟，两人一个演生，一个饰旦，一向配合天衣无缝，尤其一出《霸王别姬》，更是誉满京城，为此，两人约定合演一辈子《霸王别姬》。但两人对戏剧与人生关系的理解有本质不同，段小楼深知戏非人生，程蝶衣则是人戏不分。 
-　　段小楼在认为该成家立业之时迎娶了名妓菊仙（巩俐），致使程蝶衣认定菊仙是可耻的第三者，使段小楼做了叛徒，自此，三人围绕一出《霸王别姬》生出的爱恨情仇战开始随着时代风云的变迁不断升级，终酿成悲剧。 </div>
-<div class="hm-div3">6.8分 (26748人评价)</div></div></div>
+<%
+//http://www.jianshu.com/p/bad037991ad2
+	List<Movie> movieList = (List<Movie>) request.getAttribute("movie_list_rank_action");
+	if(movieList == null){
+		Logger safelogger = LogManager.getLogger("safe.test");
+		safelogger.warn("非法访问templates/rank.jsp文件");
+		response.sendRedirect(request.getContextPath()+"/movie/rank");
+	}
+	try{
+		Iterator<Movie> it = movieList.iterator();
+		while (it.hasNext()) {
+			Movie movie = it.next();
+		%>
+		<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 center">
+        <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 center "><div class="hm-picture"><a href="<%= request.getContextPath()%>/movie/id?id=<%= movie.getId() %>"><img class="img-responsive center-block " src="<%= movie.getPlaybill() %>>" width="150" height="210" /></a></div></div>
+        <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12 center "><div class="hm-div1"><a href="<%= request.getContextPath()%>/movie/id?id=<%= movie.getId() %>"><%=movie.getName_zh() %></a></div>
+<div class="hm-div2"><%= movie.getSummary()%></div>
+<div class="hm-div3"><%= movie.getScore() %>分 (<%= (int)(Math.random()*100000) %>人评价)</div></div></div>
  <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 center"><div class=" hm-101"></div></div>
-
- 
-        </div>
-        
-        
+		<%
+		}
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+%>
+        </div>        
         </div>
         <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12 center "> 
+        
         
           <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 "> 
          <div class="hm-fenlei">分类排行</div></div>
@@ -134,14 +171,15 @@
   <div class=" hm-fenye center-block" >
   
   <ul class="pagination">
-    <li><a href="#">&laquo;</a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li class="disabled"><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">&raquo;</a></li>
-</ul></div>
+    <li><a href="<%= request.getContextPath()%>/movie/rank?page=<%= page_number-5 %>">&laquo;</a></li>
+    <li><a href="<%= request.getContextPath()%>/movie/rank?page=<%= page_number-1 %>"><%= page_number-1 %></a></li>
+    <li class="active"><a href="<%= request.getContextPath()%>/movie/rank?page=<%= page_number %>"><%= page_number %></a></li>
+    <li><a href="<%= request.getContextPath()%>/movie/rank?page=<%= page_number+1 %>"><%= page_number+1 %></a></li>
+    <li><a href="<%= request.getContextPath()%>/movie/rank?page=<%= page_number+2 %>"><%= page_number+2 %></a></li>
+    <li><a href="<%= request.getContextPath()%>/movie/rank?page=<%= page_number+3 %>"><%= page_number+3 %></a></li>
+    <li><a href="<%= request.getContextPath()%>/movie/rank?page=<%= page_number+10 %>">&raquo;</a></li>
+  </ul>
+</div>
   </div>
    </div>
    </div> 

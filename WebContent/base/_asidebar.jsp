@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="org.exfly.models.auth.User" %>
+
+<%
+User currentuser = (User)request.getAttribute("current_user_base_template");
+if(currentuser==null){
+	currentuser = new User();
+	currentuser.setUsername("未登录");
+}
+%>
 <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -10,7 +19,7 @@
               <ul class="sidebar-menu" id="nav-accordion">
               
               	  <p class="centered"><a href="#"><img src="${path}assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
+              	  <h5 class="centered"><%= currentuser.getUsername() %></h5>
               	  	
                   <li class="mt">
                       <a class="active" href="<%= request.getContextPath()%>">
@@ -40,7 +49,7 @@
                   -->
                   
                   <li>
-                      <a href="#">
+                      <a href="<%= request.getContextPath()%>/movie/rank">
                           <i class="fa fa-dashboard"></i>
                           <span>排行</span>
                       </a>

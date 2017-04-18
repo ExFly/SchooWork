@@ -8,7 +8,7 @@
         <title>Admin Home Page</title>
         <%@ include file="base/_head.jsp"%>
     </head>
-    
+
     <body>
         <div class="navbar navbar-fixed-top">            
             <%@ include file="base/_header.jsp"%>
@@ -18,8 +18,8 @@
                 <div class="span3" id="sidebar">
             		<%@ include file="base/_asidenav.jsp"%>
                 </div>
-                <div class="span9" id="content">
-            		<%@ include file="_index.jsp"%>
+                <div class="span9" id="content"><%-- 
+            		<%@ include file="_index.jsp"%> --%>
                 </div>
             </div>
             <hr>

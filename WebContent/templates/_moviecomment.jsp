@@ -1,13 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ page import="org.exfly.models.Movie" %>
+
+<%
+	Movie movie = Movie.getMoviebyID((String)request.getAttribute("movieid")); 
+
+%>
+
 <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i>评论: <%= request.getAttribute("movieid") %></h3>
+          	<h3><i class="fa fa-angle-right"></i>评论: <%= movie.getName_zh() %></h3>
           	
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt">

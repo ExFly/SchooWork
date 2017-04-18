@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,6 +27,49 @@ public class Movie {
 	String IMDbURI;
 	String filmtype;
 
+	/*
+	 * 页码从1开始
+	 * @return 电影的List
+	 * */
+	public static List<Movie> getMoviesbyPage(int page, int sizePerPage) {
+		List<Movie> movies = new LinkedList<Movie>();
+		
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+		String result = null;
+		Movie movie = null;
+		try{
+			conn = new DBConnector().getConect();
+			
+			/*验证是否已经存在用户*/
+			String querySQL = "select * from movies ORDER BY douban_score desc limit ?,?;";
+			pstmt = conn.prepareStatement(querySQL);
+			pstmt.setInt(1, (page-1)*sizePerPage);
+			pstmt.setInt(2, sizePerPage);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				movie = new Movie();
+				movie.setId(rs.getString("id"));
+				movie.setName_en(rs.getString("name_en"));
+				movie.setName_zh(rs.getString("name_zh"));
+				movie.setPlaybill(rs.getString("playbill"));
+//				movie.setLen_film(rs.getTime("len_film"));
+				movie.setProductor(rs.getString("producer"));
+				movie.setScore(rs.getInt("douban_score"));
+				movie.setLanguage(rs.getString("language"));
+				movie.setForeshow(rs.getString("foreshow"));
+				movie.setSummary(rs.getString("summary"));
+				movie.setIMDbURI(rs.getString("IMDbURI"));
+//				movie.setFilmtype(rs.getString("filmtype"));
+				movies.add(movie);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return movies;
+	}
 
 	public static Movie getMoviebyID(String id) {
 		PreparedStatement pstmt = null;

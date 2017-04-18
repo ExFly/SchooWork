@@ -60,7 +60,8 @@ public class MovieComment extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String movieid = request.getParameter("movieid");
 		String comment = request.getParameter("comment");
-		int score = Integer.parseInt(request.getParameter("score"));
+		float score = Float.parseFloat(request.getParameter("score"));
+		
 		if(score>10) {
 			response.sendRedirect(request.getContextPath()+"/movie/id?id="+movieid);
 			return;
