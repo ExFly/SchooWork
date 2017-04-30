@@ -28,6 +28,7 @@ Caused by: java.lang.IllegalStateException: Illegal access: this web application
 	... 9 more
 
 ```
+
 * 10:46:02 测试完成，基本功能已经没有问题
 * 10:46:26 先从用户信息开始 用户信息暂时只设计对于用户名，密码的修改
 * 10:49:54 设计管理用户基础架构
@@ -39,4 +40,4 @@ Caused by: java.lang.IllegalStateException: Illegal access: this web application
 * 15:00:32 添加用户管理功能 开始
 * 17:14:27 用户信息查看和修改基本完成 开始电影信息的查看和修改
 * 17:33:13 admin 电影信息的展示 基本完成，暂时有瑕疵，马山上修改 
-* 17:33:47 休息下 + 吃饭 回来继续增加修改电影信息的功能
+* 17:33:47 休息下 + 吃饭 回来继续增加修改电影信息的功能l

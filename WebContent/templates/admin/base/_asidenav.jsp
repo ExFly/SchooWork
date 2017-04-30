@@ -12,6 +12,6 @@
       <a href="<%=request.getContextPath()%>/admin/movie"><i class="icon-chevron-right"></i> 电影信息</a>
   </li>
   <li>
-      <a href="stats.html"><i class="icon-chevron-right"></i> 统计信息</a>
+      <a href="#"><i class="icon-chevron-right"></i> 统计信息</a>
   </li>
 </ul>

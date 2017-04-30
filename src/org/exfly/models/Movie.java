@@ -27,6 +27,54 @@ public class Movie {
 	String IMDbURI;
 	String filmtype;
 
+	
+	/**
+	 * 根据不同电影种类返回电影的列表
+	 * @param page
+	 * @param sizePerPage
+	 * @return
+	 */
+	public static List<Movie> getMoviesbyType(String type, int page, int sizePerPage) {
+		List<Movie> movies = new LinkedList<Movie>();
+		
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+		String result = null;
+		Movie movie = null;
+		try{
+			conn = new DBConnector().getConect();
+			
+			/*验证是否已经存在用户*/
+			String querySQL = "select * from movies, filmtype where movies.id=filmtype.movieid AND filmtype.filmtype=? ORDER BY douban_score desc limit ?,?;";
+			pstmt = conn.prepareStatement(querySQL);
+			pstmt.setString(1, type);
+			pstmt.setInt(2, (page-1)*sizePerPage);
+			pstmt.setInt(3, sizePerPage);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				movie = new Movie();
+				movie.setId(rs.getString("id"));
+				movie.setName_en(rs.getString("name_en"));
+				movie.setName_zh(rs.getString("name_zh"));
+				movie.setPlaybill(rs.getString("playbill"));
+//				movie.setLen_film(rs.getTime("len_film"));
+				movie.setProductor(rs.getString("producer"));
+				movie.setScore(rs.getFloat("douban_score"));
+				movie.setLanguage(rs.getString("language"));
+				movie.setForeshow(rs.getString("foreshow"));
+				movie.setSummary(rs.getString("summary"));
+				movie.setIMDbURI(rs.getString("IMDbURI"));
+//				movie.setFilmtype(rs.getString("filmtype"));
+				movies.add(movie);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return movies;
+	}
+	
 	/*
 	 * 页码从1开始
 	 * @return 电影的List

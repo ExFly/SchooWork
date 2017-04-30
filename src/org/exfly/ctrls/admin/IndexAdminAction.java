@@ -31,13 +31,13 @@ public class IndexAdminAction extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-//		HttpSession session = request.getSession();
-//		String userid= (String)session.getAttribute("user_id");
-//		boolean current_user_has_permision = org.exfly.models.auth.User.hasPermission(userid);
-//		if(!current_user_has_permision) {
-//			response.sendError(401,"当前没有权限");
-//			return;
-//		}
+		HttpSession session = request.getSession();
+		String userid= (String)session.getAttribute("user_id");
+		boolean current_user_has_permision = org.exfly.models.auth.User.hasPermission(userid);
+		if(!current_user_has_permision) {
+			response.sendError(401,"当前没有权限");
+			return;
+		}
 		
 		ServletContext application = this.getServletContext();
 		RequestDispatcher rd = application.getRequestDispatcher("/templates/admin/index.jsp");

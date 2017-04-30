@@ -29,7 +29,7 @@ if(currentuser==null){
                   </li>
 
 				  <li>
-                      <a href="#">
+                      <a href="<%= request.getContextPath()%>/movie/rank">
                           <i class="fa fa-dashboard"></i>
                           <span>选电影</span>
                       </a>

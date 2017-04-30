@@ -12,7 +12,7 @@ User user_header_tmp = User.getUserbyID(userid_header);
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Movie Share Admin</a>
+        <a class="brand" href="<%= request.getContextPath()%>/admin">Movie Share Admin</a>
         <div class="nav-collapse collapse">
             <ul class="nav pull-right">
                 <li class="dropdown">

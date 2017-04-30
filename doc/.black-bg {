@@ -1,0 +1,10 @@
+.black-bg {
+	background: #fff;
+}
+#sidebar h5 {
+	color: #000;
+}
+ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
+	background:red;
+	color:#000;
+}
