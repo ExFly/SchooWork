@@ -10,7 +10,7 @@
 * [图书管理系统](https://github.com/ExFly/SchooWork/tree/bms):[展示页面](https://exfly.github.io/SchooWork/bms/图书馆里系统演示.gif)
 
 # 资源
-* [开发笔记](D:\Project\CsLearning)
+* [开发笔记](https://github.com/ExFly/CsLearning)
 
 # 备忘
 
